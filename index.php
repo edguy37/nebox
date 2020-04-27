@@ -2,7 +2,7 @@
 include_once 'app/config.inc.php';
 include_once 'app/Conexion.inc.php';
 include_once 'app/Chica.inc.php';
-include_once 'app/RepositorioChica.inc.php';
+include_once 'app/RepositorioNegocio.inc.php';
 $componentes_url = parse_url($_SERVER["REQUEST_URI"]);
 
 $ruta = $componentes_url['path'];
@@ -46,10 +46,10 @@ if($partes_ruta[0] == 'nebox'){
 			$url = $partes_ruta[2];
 
 			Conexion::abrir_conexion();
-			$chica = RepositorioChica :: obtenerChicaPorId(Conexion::obtener_conexion(), $url);
+			$negocio = RepositorioNegocio :: obtenerNegocioPorId(Conexion::obtener_conexion(), $url);
 
-			if($chica != null){
-				$ruta_elegida = 'vistas/chica.php';
+			if($negocio != null){
+				$ruta_elegida = 'vistas/negocio.php';
 			}
 		}
 	}

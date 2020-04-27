@@ -4,10 +4,10 @@ include_once 'config.inc.php';
 include_once 'Conexion.inc.php';
 include_once 'Chica.inc.php';
 
-class RepositorioChica{
+class RepositorioNegocio{
 
-	public static function obtenerChicaPorId($conexion, $url){
-		$chica = null;
+	public static function obtenerNegocioPorId($conexion, $url){
+		$negocio = null;
 
 		if(isset($conexion)){
 			try{
@@ -18,24 +18,24 @@ class RepositorioChica{
 				$resultado = $sentencia -> fetch();
 
 				if(!empty($resultado)){
-					$chica = new Chica(
+					$negocio = new Chica(
 						$resultado['CH_ID'], $resultado['NOMBRE'], $resultado['DESCRIPCION'], $resultado['LOGO'], $resultado['IMG1'], $resultado['IMG2'],
 						$resultado['IMG3'], $resultado['IMG4'], $resultado['IMG5'], $resultado['FECHA_REG'], $resultado['CORREO'], $resultado['NUM_TEL'],
 						$resultado['CATEGORIA'], $resultado['UBICACION'], $resultado['PRECIO'], $resultado['ACTIVO'], $resultado['PROMOCION']
 						);
-				} 
-				else 
+				}
+				else
 				echo "No hay nada";
 			} catch(PDOException $ex){
 				print 'ERROR'. $ex -> getMessage();
 			}
 		}
 
-		return $chica;
+		return $negocio;
 	}
 
-	public static function obtenerChicaPorBusqueda($conexion,$busqueda,$ubic){
-		$chicas = [];
+	public static function obtenerNegocioPorBusqueda($conexion,$busqueda,$ubic){
+		$negocios = [];
 
 		if (isset($conexion)){
 			try{
@@ -45,24 +45,24 @@ class RepositorioChica{
 				$resultado = $sentencia -> fetchAll();
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
-						$chicas[] = new 	Chica(
+						$negocios[] = new 	Chica(
 							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila
 						);
 					}
 				}
 				else{
-					echo "No se encontraron chicas";
+					echo "No se encontraron negocios";
 				}
 			} catch(PDOException $ex){
 				print 'ERROR: '.$ex -> getMessage();
 			}
 		}
 
-		return $chicas;
+		return $negocios;
 	}
 
-	public static function obtenerChicaPromo($conexion){
-		$chicas = [];
+	public static function obtenerNegocioPromo($conexion){
+		$negocios = [];
 
 		if (isset($conexion)){
 			try{
@@ -72,9 +72,9 @@ class RepositorioChica{
 				$resultado = $sentencia -> fetchAll();
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
-						$chicas[] = new Chica(
+						$negocios[] = new Chica(
 							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila
-						);$chica = null;
+						);$negocio = null;
 					}
 				}
 			}	 catch(PDOException $ex){
@@ -82,6 +82,6 @@ class RepositorioChica{
 			}
 		}
 
-		return $chicas;
+		return $negocios;
 	}
 }

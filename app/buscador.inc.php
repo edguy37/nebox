@@ -1,6 +1,6 @@
 <?php
 include_once 'Conexion.inc.php';
-include_once 'RepositorioChica.inc.php';
+include_once 'RepositorioNegocio.inc.php';
 include_once 'RepositorioUbicacion.inc.php';
 include_once 'Chica.inc.php';
 include_once 'Ubicacion.inc.php';
@@ -11,41 +11,41 @@ include_once 'Ubicacion.inc.php';
             $ubic = $_GET['ubic'];
         }
     }
-class EscritorChicas{
+class EscritorNegocios{
 
-        public static function escribirChicasPromo(){
-        $chicas = RepositorioChica::obtenerChicaPromo(Conexion::obtener_conexion());
+        public static function escribirNegociosPromo(){
+        $negocios = RepositorioNegocio::obtenerNegocioPromo(Conexion::obtener_conexion());
 
-        if (count($chicas)) {
-            foreach ($chicas as $chica) {
-                self::escribirChica($chica);
+        if (count($negocios)) {
+            foreach ($negocios as $negocio) {
+                self::escribirNegocio($negocio);
             }
         }
     }
 
-    public static function escribirChicas(){
+    public static function escribirNegocios(){
         global $busqueda;
         global $ubic;
-        $chicas = RepositorioChica::obtenerChicaPorBusqueda(Conexion::obtener_conexion(),$busqueda,$ubic);
+        $negocios = RepositorioNegocio::obtenerNegocioPorBusqueda(Conexion::obtener_conexion(),$busqueda,$ubic);
 
-        if (count($chicas)) {
-            foreach ($chicas as $chica) {
-                self::escribirChica($chica);
+        if (count($negocios)) {
+            foreach ($negocios as $negocio) {
+                self::escribirNegocio($negocio);
             }
         }
     }
 
-    public static function escribirChica($chica){
-        if (!isset($chica)){
+    public static function escribirNegocio($negocio){
+        if (!isset($negocio)){
             return;
         }
         ?>
         <div class="col-md-3 girls-imgs">
-            <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $chica -> obtenerId();?>">
-                <img src="<?php echo $chica -> obtenerLogo();?>"class="img-responsive img-width">
+            <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
+                <img src="<?php echo $negocio -> obtenerLogo();?>"class="img-responsive img-width">
                 <div class="resumen">
-                <h3 class="resumen-acortador"><?php echo $chica -> obtenerNombre();?></h3>
-                <h3><?php echo "$".$chica -> obtenerPrecio()."/h";?></h3>
+                <h3 class="resumen-acortador"><?php echo $negocio -> obtenerNombre();?></h3>
+                <h3><?php echo "$".$negocio -> obtenerPrecio()."/h";?></h3>
                 </div>
             </a>
         </div>
