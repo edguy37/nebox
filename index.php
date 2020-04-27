@@ -42,7 +42,7 @@ if($partes_ruta[0] == 'nebox'){
 				break;
 		}
 	}elseif (count($partes_ruta) == 3) {
-		if($partes_ruta[1] == 'chica'){
+		if($partes_ruta[1] == 'negocio'){
 			$url = $partes_ruta[2];
 
 			Conexion::abrir_conexion();

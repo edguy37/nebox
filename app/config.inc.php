@@ -12,7 +12,7 @@ define("RUTA_INSCRIPCION", SERVIDOR."/inscripcion.php");
 define("RUTA_INSCRIBIR", SERVIDOR."/inscribir.php");
 define("RUTA_INSCRIBIR_VIP", SERVIDOR."/inscribirvip.php");
 define("RUTA_VIP", SERVIDOR."/vip.php");
-define("RUTA_CHICA", SERVIDOR."/chica");
+define("RUTA_NEGOCIO", SERVIDOR."/negocio");
 define("RUTA_INDEX", SERVIDOR."/");
 define("RUTA_ICONO", SERVIDOR."/slicon.png");
 

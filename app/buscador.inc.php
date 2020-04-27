@@ -12,7 +12,7 @@ include_once 'Ubicacion.inc.php';
         }
     }
 class EscritorChicas{
-    
+
         public static function escribirChicasPromo(){
         $chicas = RepositorioChica::obtenerChicaPromo(Conexion::obtener_conexion());
 
@@ -41,11 +41,11 @@ class EscritorChicas{
         }
         ?>
         <div class="col-md-3 girls-imgs">
-            <a class="resumen-link" href="<?php echo RUTA_CHICA . '/' . $chica -> obtenerId();?>">
+            <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $chica -> obtenerId();?>">
                 <img src="<?php echo $chica -> obtenerLogo();?>"class="img-responsive img-width">
                 <div class="resumen">
                 <h3 class="resumen-acortador"><?php echo $chica -> obtenerNombre();?></h3>
-                <h3><?php echo "$".$chica -> obtenerPrecio()."/h";?></h3>                    
+                <h3><?php echo "$".$chica -> obtenerPrecio()."/h";?></h3>
                 </div>
             </a>
         </div>
@@ -78,7 +78,7 @@ function utf8ize($d) {
         foreach ($d as $k => $v) {
             $d[$k] = utf8ize($v);
         }
-    } 
+    }
     else if (is_string ($d)) {
         return utf8_encode($d);
     }
