@@ -1,0 +1,398 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+background-image: url(http://sexyloveapp.com/pattern.jpg);
+color:#ddd;
+height: 100%;
+box-sizing: border-box;
+}
+header{
+	background: #2c3e50;
+	width:100%;
+	padding-left: 20px;
+	position: fixed;
+	z-index: 99;
+
+	display:flex;
+	justify-content:space-between;
+	align-items:center;*/
+	flex-flow:row wrap;
+}
+header .logo{
+	color:#fff;
+	font-size:30px;
+	flex:1;
+}
+header .logo img{
+	vertical-align: top;
+}
+header .logo a{
+	color: #fff;
+	text-decoration: none;
+	line-height: 50px;
+}
+.img-width {
+    width: 100%;
+}
+.img-tenue{
+    filter:brightness(80%);
+}
+.img-tenue:hover{
+	filter:brightness(100%);
+}
+.logo {
+    max-width: 250px;
+}
+.buscador{
+	padding: 20px 50px;
+	flex:1;
+	display: flex;
+	flex-flow:row wrap;
+}
+.select-ubic{
+	background-color: #ddd;
+	width: 120px;
+}
+/*.ubic {
+    vertical-align: baseline;
+}*/
+.btn-buscar {
+    vertical-align: baseline;
+    width: 95px;
+}
+.txt-buscador {
+	width: 50%;
+}
+
+.jumbotron {
+	background: #428BCA;
+	height: 100px;
+	padding: 20px 0;
+	margin-bottom: 5px;
+}
+
+.girls-content {
+	padding-right: 25px;
+	padding-left: 25px;
+	padding-top: 71px;
+}
+.nombre-chica{
+	padding-top: 71px;
+}
+
+.girls-imgs {
+	padding: 5px 1px 3px;
+    filter:brightness(80%);
+}
+.girls-imgs:hover{
+	filter:brightness(110%);
+}
+.resumen{
+	display: flex;
+	justify-content:space-between;
+	flex-flow:row nowrap;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 100%;
+	background-color: #111;
+	border: 1px solid #191919;
+	border-radius: 0.4em;
+}
+.resumen-acortador{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+a.resumen-link:link{
+	color: #fe00d3;
+}
+a.resumen-link:visited{
+	color:#007bff;
+}
+a.resumen-link:hover{
+	color: #fe00d3;
+	text-decoration: none;
+}
+#link {
+	position: absolute;
+	z-index: 5;
+}
+.fondo-chica{
+	/*background-image: url(http://www.sexyloveapp.com/grr.png);*/
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%),url(http://www.sexyloveapp.com/yay.png);
+	background-size: cover;
+	background-position:center;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.fondo-promo{
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.4) 100%),url(http://www.sexyloveapp.com/grr.png);
+	background-size: cover;
+	background-position:center;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.portada-inscripcion{
+	height: 90%;
+}
+
+.titulo-inscripcion{
+	height: 85%;
+	text-align: center;
+	color: white;
+	text-shadow: 1px 2px 2px #000;
+}
+
+.contacto{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display:flex;
+	flex-flow:row wrap;
+}
+.info-inscripcion{
+	flex:1;
+	/*border:10px solid #2C3E50;*/
+}
+.formulario{
+	flex:1;
+	/*border:10px solid #2C3E50;*/
+
+	background:#111;
+  	border-radius:0.4em;
+  	border:1px solid #191919;
+  	overflow:hidden;
+  	position:relative;
+  	box-shadow: 0 5px 10px 5px rgba(0,0,0,0.2);
+}
+.inset {
+ 	padding:20px;
+  border-top:1px solid #19191a;
+}
+.formulario h2 {
+  text-shadow:0 1px 0 black;
+  text-align:center;
+  padding:15px 0;
+  border-bottom:1px solid rgba(0,0,0,1);
+  position:relative;
+  margin-bottom: 0px;
+}
+.formulario h2:after {
+ 	content:"";
+  display:block;
+  width:250px;
+  height:100px;
+  position:absolute;
+  top:0;
+  left:50px;
+  pointer-events:none;
+  transform:rotate(70deg);
+  -webkit-transform: rotate(70deg);
+  background:linear-gradient(50deg, rgba(255,255,255,0.15), rgba(0,0,0,0));
+   background-image: -webkit-linear-gradient(50deg, rgba(255,255,255,0.05), rgba(0,0,0,0)); /* For Safari */
+}
+.formulario input[type=text], input[type=tel], input[type=email], textarea[type=text]{
+ 	width:100%;
+  padding:8px 5px;
+  background:linear-gradient(#1f2124, #27292c);
+  border:1px solid #222;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  margin-bottom:20px;
+}
+.seleccionar-categoria{
+	color: #dddddd;
+    background-color: #111111;
+    border-color: #222;
+    height: 200px;
+    width: 250px;
+}
+.formulario button {
+	margin-top: 10px;
+	padding:5px 20px;
+  border:1px solid rgba(0,0,0,0.4);
+  text-shadow:0 -1px 0 rgba(0,0,0,0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 10px 10px rgba(255,255,255,0.1);
+  border-radius:0.3em;
+  background:#0184ff;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+.formulario button:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.3),
+    inset 0 -10px 10px rgba(255,255,255,0.1);
+}
+.formulario input[type=text]:hover, input[type=tel]:hover, input[type=email]:hover, textarea[type=text]:hover {
+ 	background:#27292c;
+}
+.enviado{
+	display:none;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	position: fixed;
+	color: white;
+	width: 100%;
+	height: 30%;
+	background: rgba(8,80,8,0.85);
+	left: 0px;
+	top: 25%;
+	text-align: center;
+	z-index: 50;
+}
+select {
+  height: 100px;
+  width: 100px;
+  display: block;
+}
+footer{
+	background: #2c3e50;
+	position: absolute;
+	height: 2em;
+	width: 100%;
+	bottom: 0;
+}
+.ajustable-pantalla{
+	width: 100%;
+	height:100%;
+}
+@media screen and (max-width: 800px){
+	header{
+		padding-left: 0;
+		flex-direction:column;
+	}
+	.girls-content {
+		padding-top: 81px;
+	}
+	.nombre-chica{
+		padding-top: 81px;
+	}
+	.buscador{
+		padding: 0;
+		padding-left: 100px;
+		width: 90%
+
+	}
+	.contacto{
+		flex-direction:column;
+	}
+	.girls-imgs{
+	filter:brightness(100%);
+	}
+	.img-tenue{
+    filter:brightness(100%);
+}
+@media screen and (max-width: 600px){
+	.girls-content {
+		padding-top: 140px;
+	}
+	.nombre-chica{
+		padding-top: 140px;
+	}
+	.buscador{
+		flex-direction:column;
+		padding-left: 0;
+	}
+	.txt-buscador{
+		width: 100%;
+	}
+	.select-ubic{
+		width: 100%;
+	}
+	.btn-buscar{
+		width: 100%;
+	}
+	.buscador input{
+		text-align: center;
+	}
+}
+/*
+form#contact{
+	background-color:#abbdc1
+}
+.formn{
+	background:whitesmoke
+}
+.head{
+	-webkit-border-radius:6px 6px 0 0;
+	-moz-border-radius:6px 6px 0 0;
+	border-radius:6px 6px 0 0;
+	background-color:#bd894c;
+	color:#FAFAFA
+}
+h2{
+	text-align:center;padding:18px 0 18px 0;
+	font-size:5rem
+}
+input{
+	margin-bottom:10px
+}
+textarea{
+	height:100px;margin-bottom:10px
+}
+input:first-of-type{
+	margin-top:15px
+}
+input,textarea{
+	padding:15px 10px 10px;
+	font-family:'Source Sans Pro',arial,sans-serif;border:1px solid #cecece;background:#d7d7d7;
+	color:#black;-webkit-border-radius:5px;
+	-moz-border-radius:5px;border-radius:5px;
+	-moz-background-clip:padding;
+	-webkit-background-clip:padding-box;
+	background-clip:padding-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	width:80%;max-width:600px
+}
+::-webkit-input-placeholder{color:#9A9A9A}
+:-moz-placeholder{color:#9A9A9A}
+::-moz-placeholder{color:#9A9A9A}
+:-ms-input-placeholder{color:#9A9A9A}
+button{
+	margin-top:15px;margin-bottom:25px;background-color:#bd894c;
+	padding:12px 45px;-ms-border-radius:5px;-o-border-radius:5px;
+	border-radius:5px;border:1px solid #bd894c;
+	-webkit-transition:.5s;transition:.5s;
+	display:inline-block;cursor:pointer;width:30%;
+	color:#fff
+}
+button:hover,.button:hover{
+	background:#e2a257
+}
+label.error{
+	font-family:'Source Sans Pro',arial,sans-serif;
+	font-size:3em;
+	display:block;
+	padding-top:10px;
+	padding-bottom:10px;
+	background-color:#d89c9c;width:80%;
+	margin:auto;color:#FAFAFA;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px
+}
+@media (max-width:700px){
+	label.error{width:90%}
+	input,textarea{width:90%; color:black}
+	.formn{background-color:#abbdc1}button{width:90%}body{padding-top:10px}
+}
+.message{
+	font-family:'Source Sans Pro',arial,sans-serif;
+	font-size:3em;
+	display:none;padding-top:10px;
+	padding-bottom:10px;background-color:#2ABCA7;
+	width:80%;margin:auto;
+	color:#FAFAFA;-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	border-radius:6px
+}
