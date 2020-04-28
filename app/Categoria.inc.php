@@ -2,6 +2,7 @@
 class Categoria{
 	private $id;
 	private $categoria;
+	private $imagen;
 
 	public function __construct($id, $categoria, $imagen){
 		$this -> id = $id;
