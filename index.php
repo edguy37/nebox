@@ -3,6 +3,7 @@ include_once 'app/config.inc.php';
 include_once 'app/Conexion.inc.php';
 include_once 'app/Chica.inc.php';
 include_once 'app/RepositorioNegocio.inc.php';
+include_once 'app/RepositorioCategoria.inc.php';
 $componentes_url = parse_url($_SERVER["REQUEST_URI"]);
 
 $ruta = $componentes_url['path'];

@@ -13,7 +13,7 @@ include_once 'Ubicacion.inc.php';
     }
 class EscritorNegocios{
 
-        public static function escribirNegociosPromo(){
+    public static function escribirNegociosPromo(){
         $negocios = RepositorioNegocio::obtenerNegocioPromo(Conexion::obtener_conexion());
 
         if (count($negocios)) {
@@ -50,6 +50,32 @@ class EscritorNegocios{
             </a>
         </div>
         <?php
+    }
+}
+
+class EscritorCategorias{
+    public static function escribirCategorias(){
+      $categorias = RepositorioCategoria::obtenerCategorias(Conexion::obtener_conexion());
+      if (!empty($categorias)){
+        foreach ($categorias as $categoria){
+          self::escribirCategoria($categoria);
+        }
+      }
+    }
+
+    public static function escribirCategoria($categoria){
+      if (!isset($categoria)){
+        return;
+      }
+      ?>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-8">
+          <div style="background-image: url(<?php echo $categoria -> obtenerImagen();?>);" class="">
+            <a href="#"><?php echo $categoria -> obtenerCategoria();?></a>
+          </div>
+        </div>
+      </div>
+      <?php
     }
 }
 

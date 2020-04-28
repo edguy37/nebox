@@ -4,6 +4,7 @@ include_once 'app/buscador.inc.php';
 include_once 'plantillas/declaracion.inc.php';
 include_once 'plantillas/barra_busqueda.inc.php';
 include_once 'app/RepositorioNegocio.inc.php';
+include_once 'app/RepositorioCategoria.inc.php';
 include_once 'app/Chica.inc.php';
 ?>
 	<div class="girls-content">
@@ -15,6 +16,7 @@ include_once 'app/Chica.inc.php';
    					}
             else{
               EscritorNegocios::escribirNegociosPromo();
+							EscritorCategorias::escribirCategorias();
               EscritorUbicaciones::escribirUbicaciones();
             }
    					?>
