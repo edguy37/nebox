@@ -77,7 +77,7 @@ header .logo a{
 .girls-content {
 	padding-right: 25px;
 	padding-left: 25px;
-	padding-top: 71px;
+	padding-top: 78px;
 }
 .nombre-chica{
 	padding-top: 71px;
@@ -135,7 +135,10 @@ a.resumen-link:hover{
 	padding-left: 5%;
 	padding-right: 5%;
 }
-
+.centrar-imagen{
+	background-size: cover;
+	background-position: center;
+}
 .portada-inscripcion{
 	height: 90%;
 }
