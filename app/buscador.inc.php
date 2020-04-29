@@ -68,10 +68,10 @@ class EscritorCategorias{
         return;
       }
       ?>
-        <div class="col-12 col-sm-6 col-md-8">
-          <div style="background-image: url(<?php echo $categoria -> obtenerImagen();?>);" class="centrar-imagen">
-            <a href="#" class="link-clickbox"></a>
-            <a href="#"><?php echo $categoria -> obtenerCategoria();?></a>
+        <div class="col-12 col-sm-6 col-md-4">
+          <div style="background-image: url(<?php echo $categoria -> obtenerImagen();?>);" class="centrar-imagen caja-categoria">
+            <a href="#" class="caja-link-categoria"></a>
+            <a href="#" class="titulo-link-categoria"><?php echo $categoria -> obtenerCategoria();?></a>
           </div>
         </div>
       <?php

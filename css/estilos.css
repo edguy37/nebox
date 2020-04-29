@@ -55,6 +55,7 @@ header .logo a{
 .select-ubic{
 	background-color: #ddd;
 	width: 120px;
+	height: 24px;
 }
 /*.ubic {
     vertical-align: baseline;
@@ -78,6 +79,9 @@ header .logo a{
 	padding-right: 25px;
 	padding-left: 25px;
 	padding-top: 78px;
+}
+.resultados {
+	padding-top: 25px;
 }
 .nombre-chica{
 	padding-top: 71px;
@@ -138,6 +142,40 @@ a.resumen-link:hover{
 .centrar-imagen{
 	background-size: cover;
 	background-position: center;
+}
+.caja-categoria{
+	position: relative;
+	padding: 3em 0;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+.caja-link-categoria{
+	display: block;
+	height: 7.5em;
+	width: 100%;
+	position: absolute;
+	margin-top: -3em;
+	z-index: 20;
+}
+.titulo-link-categoria{
+	display: block;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	text-decoration: none !important;
+}
+.caja-link-categoria:after{
+	content: ' ';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 4px;
+	background: rgba(0, 0, 0, 0.15);
+}
+.caja-link-categoria:hover:after{
+	display: none;
 }
 .portada-inscripcion{
 	height: 90%;
@@ -258,7 +296,7 @@ select {
 }
 footer{
 	background: #2c3e50;
-	position: absolute;
+	position: relative;
 	height: 2em;
 	width: 100%;
 	bottom: 0;
@@ -292,10 +330,11 @@ footer{
 	}
 	.img-tenue{
     filter:brightness(100%);
+	}
 }
 @media screen and (max-width: 600px){
 	.girls-content {
-		padding-top: 140px;
+		padding-top: 147px;
 	}
 	.nombre-chica{
 		padding-top: 140px;
@@ -309,6 +348,7 @@ footer{
 	}
 	.select-ubic{
 		width: 100%;
+		height: 24px;
 	}
 	.btn-buscar{
 		width: 100%;
