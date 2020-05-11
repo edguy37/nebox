@@ -24,8 +24,9 @@ class RepositorioNegocio{
 						$resultado['CATEGORIA'], $resultado['UBICACION'], $resultado['PRECIO'], $resultado['ACTIVO'], $resultado['PROMOCION']
 						);
 				}
-				else
-				echo "No hay nada";
+				else{
+					echo "No hay nada";
+				}
 			} catch(PDOException $ex){
 				print 'ERROR'. $ex -> getMessage();
 			}

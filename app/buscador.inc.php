@@ -11,6 +11,7 @@ include_once 'Ubicacion.inc.php';
             $ubic = $_GET['ubic'];
         }
     }
+
 class EscritorNegocios{
 
     public static function escribirNegociosPromo(){
