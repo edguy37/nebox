@@ -83,6 +83,9 @@ header .logo a{
 .resultados {
 	padding-top: 25px;
 }
+.resultados-principales > div {
+	margin: 20px 0px;
+}
 .nombre-chica{
 	padding-top: 71px;
 }

@@ -9,15 +9,23 @@ include_once 'app/Chica.inc.php';
 ?>
 	<div class="girls-content">
 		<section class="resultados">
-			<div class="row">
+			<div class="row resultados-principales">
    					<?php
    					if (isset($_GET['search'])) {
    						EscritorNegocios::escribirNegocios();
    					}
             else{
-              EscritorNegocios::escribirNegociosPromo();
-							EscritorCategorias::escribirCategorias();
-              EscritorUbicaciones::escribirUbicaciones();
+							?>
+							<div class="row negocios">
+								<?php EscritorNegocios::escribirNegociosPromo(); ?>
+							</div>
+							<div class="row categorias">
+								<?php EscritorCategorias::escribirCategorias(); ?>
+							</div>
+							<div class="row ubicaciones">
+								<?php EscritorUbicaciones::escribirUbicaciones();?>
+							</div>
+							<?php
             }
    					?>
     		</div>
