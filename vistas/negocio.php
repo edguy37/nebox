@@ -30,6 +30,21 @@ include_once 'plantillas/barra_busqueda.inc.php';
 </div>
 <br>
 <div class="container"><?php echo $negocio -> obtenerDescripcion();?></div>
+<div class="seccion">
+	<div class="seccion-horario container">
+		<div class="horario-titulo">
+			<h3>
+				<i class="fa fa-clock-o" aria-hidden="true"></i> Horario
+			</h3>
+		</div>
+		<table class="horario">
+			<tr>
+				<th>Lunes</th>
+				<td>8:00</td>
+			</tr>
+		</table>
+	</div>
+</div>
 <div class="container text-center">
 	<h3>Número de teléfono: </h3>
 	<a href="tel:<?php echo $negocio -> obtenerTelefono();?>">

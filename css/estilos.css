@@ -5,7 +5,7 @@
 }
 body{
 background-image: url(http://sexyloveapp.com/pattern.jpg);
-color:#ddd;
+color:#black;
 height: 100%;
 box-sizing: border-box;
 }
@@ -174,12 +174,21 @@ a.resumen-link:hover{
 	right: 0;
 	bottom: 0;
 	left: 0;
-	border-radius: 4px;
+	border-radius: 5px;
 	background: rgba(0, 0, 0, 0.15);
 }
 .caja-link-categoria:hover:after{
 	display: none;
 }
+/* ========================================= pagina negocio =================================== */
+.seccion{
+	margin: 0px 0.7em;
+}
+.seccion-horario{
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+/* ========================================= pagina inscripcion =================================== */
 .portada-inscripcion{
 	height: 90%;
 }
