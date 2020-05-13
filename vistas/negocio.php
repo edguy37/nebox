@@ -32,15 +32,22 @@ include_once 'plantillas/barra_busqueda.inc.php';
 <div class="container"><?php echo $negocio -> obtenerDescripcion();?></div>
 <div class="seccion">
 	<div class="seccion-horario container">
-		<div class="horario-titulo">
-			<h3>
+		<div class="">
+			<h4 class="horario-titulo">
 				<i class="fa fa-clock-o" aria-hidden="true"></i> Horario
-			</h3>
+			</h4>
 		</div>
 		<table class="horario">
 			<tr>
 				<th>Lunes</th>
 				<td>8:00</td>
+			</tr>
+			<tr>
+				<?php echo $negocio -> obtenerDescanso();
+				echo $negocio -> obtenerOpen();
+				echo $negocio -> obtenerClose();
+				echo $negocio -> obtenerDay();
+				?>
 			</tr>
 		</table>
 	</div>

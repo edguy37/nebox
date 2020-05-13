@@ -17,8 +17,12 @@ class Chica{
 	private $precio;
 	private $activo;
 	private $promocion;
+	private $descanso;
+	private $open;
+	private $close;
+	private $day;
 
-	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion, $precio, $activo, $promocion){
+	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion, $precio, $activo, $promocion, $descanso, $open, $close, $day){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
 		$this -> descripcion = $descripcion;
@@ -36,6 +40,10 @@ class Chica{
 		$this -> precio = $precio;
 		$this -> activo = $activo;
 		$this -> promocion = $promocion;
+		$this -> descanso = $descanso;
+		$this -> open = $open;
+		$this -> close = $close;
+		$this -> day = $day;
 	}
 
 	public function obtenerId(){
@@ -87,7 +95,7 @@ class Chica{
 	}
 
 	public function obtenerCategorias(){
-		return $this -> categorias;	
+		return $this -> categorias;
 	}
 
 	public function obtenerUbicacion(){
@@ -100,6 +108,22 @@ class Chica{
 
 	public function estaActivo(){
 		return $this -> activo;
+	}
+
+	public function obtenerDescanso(){
+		return $this -> descanso;
+	}
+
+	public function obtenerOpen(){
+		return $this -> open;
+	}
+
+	public function obtenerClose(){
+		return $this -> close;
+	}
+
+	public function obtenerDay(){
+		return $this -> day;
 	}
 
 	public function cambiarNombre($nombre){
@@ -161,6 +185,22 @@ class Chica{
 
 	public function cambiarActivo($activo){
 		$this -> activo = $activo;
+	}
+
+	public function cambiarDescanso($descanso){
+		$this -> descanso = $descanso;
+	}
+
+	public function cambiarOpen($open){
+		$this -> open = $open;
+	}
+
+	public function cambiarClose($close){
+		$this -> close = $close;
+	}
+
+	public function cambiarDay($day){
+		$this -> day = $day;
 	}
 
 }

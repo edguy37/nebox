@@ -188,6 +188,10 @@ a.resumen-link:hover{
 	border: 1px solid #ddd;
 	border-radius: 5px;
 }
+.horario-titulo{
+	padding: 8px 0px;
+	border-bottom: 1px solid #ddd;
+}
 /* ========================================= pagina inscripcion =================================== */
 .portada-inscripcion{
 	height: 90%;

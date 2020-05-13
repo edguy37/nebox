@@ -11,7 +11,7 @@ class RepositorioNegocio{
 
 		if(isset($conexion)){
 			try{
-				$sql = "SELECT * FROM chicas WHERE CH_ID LIKE :id";
+				$sql = "SELECT * FROM chicas INNER JOIN horarios ON chicas.CH_ID=horarios.negocio_id WHERE CH_ID LIKE :id";
 				$sentencia = $conexion -> prepare($sql);
 				$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
 				$sentencia -> execute();
@@ -21,7 +21,8 @@ class RepositorioNegocio{
 					$negocio = new Chica(
 						$resultado['CH_ID'], $resultado['NOMBRE'], $resultado['DESCRIPCION'], $resultado['LOGO'], $resultado['IMG1'], $resultado['IMG2'],
 						$resultado['IMG3'], $resultado['IMG4'], $resultado['IMG5'], $resultado['FECHA_REG'], $resultado['CORREO'], $resultado['NUM_TEL'],
-						$resultado['CATEGORIA'], $resultado['UBICACION'], $resultado['PRECIO'], $resultado['ACTIVO'], $resultado['PROMOCION']
+						$resultado['CATEGORIA'], $resultado['UBICACION'], $resultado['PRECIO'], $resultado['ACTIVO'], $resultado['PROMOCION'], $resultado['descanso'],
+						$resultado['open_t'], $resultado['close_t'], $resultado['day']
 						);
 				}
 				else{
@@ -47,7 +48,7 @@ class RepositorioNegocio{
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
 						$negocios[] = new 	Chica(
-							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila
+							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila
 						);
 					}
 				}
@@ -74,7 +75,7 @@ class RepositorioNegocio{
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
 						$negocios[] = new Chica(
-							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila
+							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila
 						);$negocio = null;
 					}
 				}
