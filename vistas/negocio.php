@@ -5,6 +5,7 @@
 //include_once 'app/RepositorioChica.inc.php';
 include_once 'plantillas/declaracion.inc.php';
 include_once 'plantillas/barra_busqueda.inc.php';
+include_once 'app/buscador.inc.php';
 ?>
 <div class="container text-center nombre-chica">
 	<h1><?php echo $negocio -> obtenerNombre();?></h1>
@@ -49,6 +50,8 @@ include_once 'plantillas/barra_busqueda.inc.php';
 				echo $negocio -> obtenerDay();
 				?>
 			</tr>
+			<br>
+			<?php EscritorNegocios::escribirHorarios(); ?>
 		</table>
 	</div>
 </div>

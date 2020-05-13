@@ -36,6 +36,37 @@ class RepositorioNegocio{
 		return $negocio;
 	}
 
+	public static function obtenerNegocioConHorario($conexion, $url){
+		$negocios = [];
+
+		if(isset($conexion)){
+			try{
+				$sql = "SELECT * FROM chicas INNER JOIN horarios ON chicas.CH_ID=horarios.negocio_id WHERE CH_ID LIKE :id";
+				$sentencia = $conexion -> prepare($sql);
+				$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
+				$sentencia -> execute();
+				$resultado = $sentencia -> fetchAll();
+
+				if (count($resultado)){
+					foreach ($resultado as $fila) {
+						$negocios[] = new 	Chica(
+							$fila['CH_ID'], $fila['NOMBRE'], $fila['DESCRIPCION'], $fila['LOGO'], $fila['IMG1'], $fila['IMG2'],
+							$fila['IMG3'], $fila['IMG4'], $fila['IMG5'], $fila['FECHA_REG'], $fila['CORREO'], $fila['NUM_TEL'],
+							$fila['CATEGORIA'], $fila['UBICACION'], $fila['PRECIO'], $fila['ACTIVO'], $fila['PROMOCION'], $fila['descanso'],
+							$fila['open_t'], $fila['close_t'], $fila['day']
+						);
+					}
+				}
+				else{
+					echo "No hay nada";
+				}
+			} catch(PDOException $ex){
+				print 'ERROR'. $ex -> getMessage();
+			}
+		}
+		return $negocios;
+	}
+
 	public static function obtenerNegocioPorBusqueda($conexion,$busqueda,$ubic){
 		$negocios = [];
 

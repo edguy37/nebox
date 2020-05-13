@@ -4,6 +4,7 @@ include_once 'RepositorioNegocio.inc.php';
 include_once 'RepositorioUbicacion.inc.php';
 include_once 'Chica.inc.php';
 include_once 'Ubicacion.inc.php';
+
     if(isset($_GET['search'])){
         $busqueda = $_GET['search'];
         $busqueda = preg_replace("#[^0-9a-z]#i","", $busqueda);
@@ -51,6 +52,27 @@ class EscritorNegocios{
             </a>
         </div>
         <?php
+    }
+
+    public static function escribirHorarios(){
+      global $url;
+      $negocios = RepositorioNegocio::obtenerNegocioConHorario(Conexion::obtener_conexion(), $url);
+
+      if (count($negocios)) {
+          foreach ($negocios as $negocio) {
+              self::escribirHorario($negocio);
+          }
+      }
+    }
+
+    public static function escribirHorario($negocio){
+      if (!isset($negocio)){
+        return;
+      }
+      echo $negocio -> obtenerOpen();?> <br> <?php
+      echo $negocio -> obtenerClose();?> <br> <?php
+      echo $negocio -> obtenerDay();?> <br> <?php
+      echo $negocio -> obtenerDescanso();?> <br> <?php
     }
 }
 
