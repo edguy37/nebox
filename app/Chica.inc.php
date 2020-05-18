@@ -17,12 +17,15 @@ class Chica{
 	private $precio;
 	private $activo;
 	private $promocion;
-	private $descanso;
-	private $open;
-	private $close;
-	private $day;
+	private $lunes;
+	private $martes;
+	private $miercoles;
+	private $jueves;
+	private $viernes;
+	private $sabado;
+	private $domingo;
 
-	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion, $precio, $activo, $promocion, $descanso, $open, $close, $day){
+	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
 		$this -> descripcion = $descripcion;
@@ -40,10 +43,13 @@ class Chica{
 		$this -> precio = $precio;
 		$this -> activo = $activo;
 		$this -> promocion = $promocion;
-		$this -> descanso = $descanso;
-		$this -> open = $open;
-		$this -> close = $close;
-		$this -> day = $day;
+		$this -> lunes = $lunes;
+		$this -> martes = $martes;
+		$this -> miercoles = $miercoles;
+		$this -> jueves = $jueves;
+		$this -> viernes = $viernes;
+		$this -> sabado = $sabado;
+		$this -> domingo = $domingo;
 	}
 
 	public function obtenerId(){
@@ -110,20 +116,32 @@ class Chica{
 		return $this -> activo;
 	}
 
-	public function obtenerDescanso(){
-		return $this -> descanso;
+	public function obtenerLunes(){
+		return $this -> lunes;
 	}
 
-	public function obtenerOpen(){
-		return $this -> open;
+	public function obtenerMartes(){
+		return $this -> Martes;
 	}
 
-	public function obtenerClose(){
-		return $this -> close;
+	public function obtenerMiercoles(){
+		return $this -> miercoles;
 	}
 
-	public function obtenerDay(){
-		return $this -> day;
+	public function obtenerJueves(){
+		return $this -> jueves;
+	}
+
+	public function obtenerViernes(){
+		return $this -> viernes;
+	}
+
+	public function obtenerSabado(){
+		return $this -> sabado;
+	}
+
+	public function obtenerdomingo(){
+		return $this -> domingo;
 	}
 
 	public function cambiarNombre($nombre){
@@ -187,20 +205,32 @@ class Chica{
 		$this -> activo = $activo;
 	}
 
-	public function cambiarDescanso($descanso){
-		$this -> descanso = $descanso;
+	public function cambiarLunes($lunes){
+		$this -> descanso = $lunes;
 	}
 
-	public function cambiarOpen($open){
-		$this -> open = $open;
+	public function cambiarMartes($martes){
+		$this -> open = $martes;
 	}
 
-	public function cambiarClose($close){
-		$this -> close = $close;
+	public function cambiarMiercoles($miercoles){
+		$this -> close = $miercoles;
 	}
 
-	public function cambiarDay($day){
-		$this -> day = $day;
+	public function cambiarJueves($jueves){
+		$this -> day = $jueves;
+	}
+
+	public function cambiarViernes($viernes){
+		$this -> day = $viernes;
+	}
+
+	public function cambiarSabado($sabado){
+		$this -> day = $sabado;
+	}
+
+	public function cambiarDomingo($domingo){
+		$this -> day = $domingo;
 	}
 
 }
