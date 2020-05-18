@@ -121,7 +121,7 @@ class Chica{
 	}
 
 	public function obtenerMartes(){
-		return $this -> Martes;
+		return $this -> martes;
 	}
 
 	public function obtenerMiercoles(){

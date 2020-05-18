@@ -44,11 +44,6 @@ include_once 'app/buscador.inc.php';
 				<td>8:00</td>
 			</tr>
 			<tr>
-				<?php echo $negocio -> obtenerDescanso();
-				echo $negocio -> obtenerOpen();
-				echo $negocio -> obtenerClose();
-				echo $negocio -> obtenerDay();
-				?>
 			</tr>
 			<br>
 			<?php EscritorNegocios::escribirHorarios(); ?>

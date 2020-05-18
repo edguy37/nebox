@@ -69,10 +69,10 @@ class EscritorNegocios{
       if (!isset($negocio)){
         return;
       }
-      echo $negocio -> obtenerOpen();?> <br> <?php
-      echo $negocio -> obtenerClose();?> <br> <?php
-      echo $negocio -> obtenerDay();?> <br> <?php
-      echo $negocio -> obtenerDescanso();?> <br> <?php
+      echo $negocio -> obtenerLunes();?> <br> <?php
+      echo $negocio -> obtenerMartes();?> <br> <?php
+      echo $negocio -> obtenerMiercoles();?> <br> <?php
+      echo $negocio -> obtenerJueves();?> <br> <?php
     }
 }
 
