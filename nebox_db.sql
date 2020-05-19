@@ -174,7 +174,7 @@ CREATE TABLE horarios (
     open_t TIME,
     close_t TIME,
     day int NOT NULL,
-    CONSTRAINT fk_nid FOREIGN KEY(negocio_id) REFERENCES chicas(CH_ID)
+    CONSTRAINT fk_nid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
 );
 INSERT INTO horarios(negocio_id, open_t, close_t, day) VALUES (51, '07:00:00', '16:00:00', 0)
 
@@ -188,6 +188,16 @@ CREATE TABLE horario (
     viernes VARCHAR(50),
     sabado VARCHAR(50),
     domingo VARCHAR(50),
-    CONSTRAINT fk_negid FOREIGN KEY(negocio_id) REFERENCES chicas(CH_ID)
+    CONSTRAINT fk_negid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
 );
 INSERT INTO horario(negocio_id, lunes, martes, miercoles, jueves, viernes, sabado, domingo) VALUES (51, '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00','07:00 - 16:00','08:00 - 13:00', 'Cerrado')
+
+CREATE TABLE extras (
+    negocio_id tinyint(12) NOT NULL,
+ 	  tarjeta int(40) DEFAULT 0,
+    alcohol int(40) DEFAULT 0,
+    estacionamiento int(40) DEFAULT 0,
+    est_bicis int(40) DEFAULT 0,
+    CONSTRAINT fk_negocioid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
+);
+INSERT INTO extras(negocio_id, tarjeta, alcohol, estacionamiento, est_bicis) VALUES (51, 1, 1, 1, 1)
