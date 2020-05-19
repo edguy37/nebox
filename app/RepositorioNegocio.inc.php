@@ -11,7 +11,7 @@ class RepositorioNegocio{
 
 		if(isset($conexion)){
 			try{
-				$sql = "SELECT * FROM chicas INNER JOIN horario ON chicas.CH_ID=horario.negocio_id INNER JOIN extras ON chicas.CH_ID=extras.negocio_id WHERE CH_ID LIKE :id";
+				$sql = "SELECT * FROM chicas LEFT OUTER JOIN horario ON chicas.CH_ID=horario.negocio_id LEFT OUTER JOIN extras ON chicas.CH_ID=extras.negocio_id WHERE CH_ID LIKE :id";
 				$sentencia = $conexion -> prepare($sql);
 				$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
 				$sentencia -> execute();
@@ -64,6 +64,7 @@ class RepositorioNegocio{
 					print 'ERROR'. $ex -> getMessage();
 				}
 			}
+			return $negocio;
 	}
 
 	public static function obtenerNegocioConHorario($conexion, $url){
@@ -89,7 +90,7 @@ class RepositorioNegocio{
 					}
 				}
 				else{
-					echo "No hay nada";
+					echo "No hay nada con horario";
 				}
 			} catch(PDOException $ex){
 				print 'ERROR'. $ex -> getMessage();

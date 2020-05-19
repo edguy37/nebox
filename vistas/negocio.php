@@ -32,9 +32,7 @@ include_once 'app/buscador.inc.php';
 <br>
 <div class="container"><?php echo $negocio -> obtenerDescripcion();?></div>
 <div class="informacion container">
-	<div class="seccion-extras caja-info container">
-		<span><?php echo $negocio -> obtenerTarjeta(); ?></span>
-	</div>
+	<?php EscritorNegocios::escribirExtras(); ?>
 	<div class="seccion-horario caja-info container">
 		<div class="">
 			<h4 class="horario-titulo">

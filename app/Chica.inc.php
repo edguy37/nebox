@@ -163,7 +163,7 @@ class Chica{
 	}
 
 	public function obtenerAlcohol(){
-		return $this -> domingo;
+		return $this -> alcohol;
 	}
 
 	public function obtenerEstacionamiento(){

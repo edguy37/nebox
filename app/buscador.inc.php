@@ -57,6 +57,20 @@ class EscritorNegocios{
     public static function escribirExtras(){
       global $url;
       $extras = RepositorioNegocio::obtenerExtras(Conexion::obtener_conexion(), $url);
+      self::escribirExtra($extras);
+    }
+
+    public static function escribirExtra($extras){
+      if (!isset($extras)){
+        return;
+      }?>
+      <div class="seccion-extras caja-info container">
+    		<span><?php echo $extras -> obtenerTarjeta(); ?></span>
+        <span><?php echo $extras -> obtenerAlcohol(); ?></span>
+        <span><?php echo $extras -> obtenerEstacionamiento(); ?></span>
+        <span><?php echo $extras -> obtenerBicis(); ?></span>
+    	</div>
+      <?php
     }
 
     public static function escribirHorarios(){
