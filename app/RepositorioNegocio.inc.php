@@ -37,6 +37,35 @@ class RepositorioNegocio{
 		return $negocio;
 	}
 
+	public static function obtenerExtras($conexion, $url){
+			$negocio = null;
+
+			if(isset($conexion)){
+				try{
+					$sql = "SELECT tarjeta, alcohol, estacionamiento, est_bicis FROM chicas INNER JOIN horario ON chicas.CH_ID=horario.negocio_id INNER JOIN extras ON chicas.CH_ID=extras.negocio_id WHERE CH_ID LIKE :id";
+					$sentencia = $conexion -> prepare($sql);
+					$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
+					$sentencia -> execute();
+					$resultado = $sentencia -> fetch();
+
+					if(!empty($resultado)){
+						$negocio = new Chica(
+							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
+							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
+							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
+							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
+							$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis']
+							);
+					}
+					else{
+						echo "No hay nada en extras";
+					}
+				} catch(PDOException $ex){
+					print 'ERROR'. $ex -> getMessage();
+				}
+			}
+	}
+
 	public static function obtenerNegocioConHorario($conexion, $url){
 		$negocios = [];
 

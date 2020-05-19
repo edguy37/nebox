@@ -54,6 +54,11 @@ class EscritorNegocios{
         <?php
     }
 
+    public static function escribirExtras(){
+      global $url;
+      $extras = RepositorioNegocio::obtenerExtras(Conexion::obtener_conexion(), $url);
+    }
+
     public static function escribirHorarios(){
       global $url;
       $negocios = RepositorioNegocio::obtenerNegocioConHorario(Conexion::obtener_conexion(), $url);
