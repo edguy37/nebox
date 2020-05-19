@@ -24,8 +24,13 @@ class Chica{
 	private $viernes;
 	private $sabado;
 	private $domingo;
+	private $tarjeta;
+	private $alcohol;
+	private $estacionamiento;
+	private $est_bicis;
 
-	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo){
+	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion,
+	$precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
 		$this -> descripcion = $descripcion;
@@ -50,6 +55,11 @@ class Chica{
 		$this -> viernes = $viernes;
 		$this -> sabado = $sabado;
 		$this -> domingo = $domingo;
+		$this -> tarjeta = $tarjeta;
+		$this -> alcohol = $alcohol;
+		$this -> estacionamiento = $estacionamiento;
+		$this -> est_bicis = $est_bicis;
+
 	}
 
 	public function obtenerId(){
@@ -116,6 +126,10 @@ class Chica{
 		return $this -> activo;
 	}
 
+	public function obtenerPromo(){
+		return $this -> promocion;
+	}
+
 	public function obtenerLunes(){
 		return $this -> lunes;
 	}
@@ -140,8 +154,24 @@ class Chica{
 		return $this -> sabado;
 	}
 
-	public function obtenerdomingo(){
+	public function obtenerDomingo(){
 		return $this -> domingo;
+	}
+
+	public function obtenerTarjeta(){
+		return $this -> tarjeta;
+	}
+
+	public function obtenerAlcohol(){
+		return $this -> domingo;
+	}
+
+	public function obtenerEstacionamiento(){
+		return $this -> estacionamiento;
+	}
+
+	public function obtenerBicis(){
+		return $this -> est_bicis;
 	}
 
 	public function cambiarNombre($nombre){
@@ -205,32 +235,52 @@ class Chica{
 		$this -> activo = $activo;
 	}
 
+	public function cambiarPromo($promocion){
+		$this -> promocion = $promocion;
+	}
+
 	public function cambiarLunes($lunes){
-		$this -> descanso = $lunes;
+		$this -> lunes = $lunes;
 	}
 
 	public function cambiarMartes($martes){
-		$this -> open = $martes;
+		$this -> martes = $martes;
 	}
 
 	public function cambiarMiercoles($miercoles){
-		$this -> close = $miercoles;
+		$this -> miercoles = $miercoles;
 	}
 
 	public function cambiarJueves($jueves){
-		$this -> day = $jueves;
+		$this -> jueves = $jueves;
 	}
 
 	public function cambiarViernes($viernes){
-		$this -> day = $viernes;
+		$this -> viernes = $viernes;
 	}
 
 	public function cambiarSabado($sabado){
-		$this -> day = $sabado;
+		$this -> sabado = $sabado;
 	}
 
 	public function cambiarDomingo($domingo){
-		$this -> day = $domingo;
+		$this -> domingo = $domingo;
+	}
+
+	public function cambiarTarjeta($tarjeta){
+		$this -> tarjeta = $tarjeta;
+	}
+
+	public function cambiarAlcohol($alcohol){
+		$this -> alcohol = $alcohol;
+	}
+
+	public function cambiarEstacionamiento($estacionamiento){
+		$this -> estacionamiento = $estacionamiento;
+	}
+
+	public function cambiarBicis($est_bicis){
+		$this -> est_bicis = $est_bicis;
 	}
 
 }

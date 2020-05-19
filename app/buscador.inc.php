@@ -95,7 +95,7 @@ class EscritorNegocios{
 			</tr>
       <tr>
 				<th>Domingo</th>
-				<td><?php echo $negocio -> obtenerdomingo(); ?></td>
+				<td><?php echo $negocio -> obtenerDomingo(); ?></td>
 			</tr>
       <?php
     }

@@ -39,9 +39,6 @@ include_once 'app/buscador.inc.php';
 			</h4>
 		</div>
 		<table class="horario">
-			<tr>
-			</tr>
-			<br>
 			<?php EscritorNegocios::escribirHorarios(); ?>
 		</table>
 	</div>
