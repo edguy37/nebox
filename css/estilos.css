@@ -181,10 +181,7 @@ a.resumen-link:hover{
 	display: none;
 }
 /* ========================================= pagina negocio =================================== */
-.seccion{
-	margin: 0px 0.7em;
-}
-.seccion-horario{
+.caja-info{
 	border: 1px solid #ddd;
 	border-radius: 5px;
 }

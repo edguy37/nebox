@@ -31,8 +31,11 @@ include_once 'app/buscador.inc.php';
 </div>
 <br>
 <div class="container"><?php echo $negocio -> obtenerDescripcion();?></div>
-<div class="seccion">
-	<div class="seccion-horario container">
+<div class="informacion container">
+	<div class="seccion-extras caja-info container">
+		<span><?php echo $negocio -> obtenerTarjeta(); ?></span>
+	</div>
+	<div class="seccion-horario caja-info container">
 		<div class="">
 			<h4 class="horario-titulo">
 				<i class="fa fa-clock-o" aria-hidden="true"></i> Horario
