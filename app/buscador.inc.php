@@ -68,11 +68,36 @@ class EscritorNegocios{
     public static function escribirHorario($negocio){
       if (!isset($negocio)){
         return;
-      }
-      echo $negocio -> obtenerLunes();?> <br> <?php
-      echo $negocio -> obtenerMartes();?> <br> <?php
-      echo $negocio -> obtenerMiercoles();?> <br> <?php
-      echo $negocio -> obtenerJueves();?> <br> <?php
+      }?>
+      <tr>
+				<th>Lunes</th>
+				<td><?php echo $negocio -> obtenerLunes(); ?></td>
+			</tr>
+      <tr>
+				<th>Martes</th>
+				<td><?php echo $negocio -> obtenerMartes(); ?></td>
+			</tr>
+      <tr>
+				<th>Miercoles</th>
+				<td><?php echo $negocio -> obtenerMiercoles(); ?></td>
+			</tr>
+      <tr>
+				<th>Jueves</th>
+				<td><?php echo $negocio -> obtenerJueves(); ?></td>
+			</tr>
+      <tr>
+				<th>Viernes</th>
+				<td><?php echo $negocio -> obtenerViernes(); ?></td>
+			</tr>
+      <tr>
+				<th>Sabado</th>
+				<td><?php echo $negocio -> obtenerSabado(); ?></td>
+			</tr>
+      <tr>
+				<th>Domingo</th>
+				<td><?php echo $negocio -> obtenerdomingo(); ?></td>
+			</tr>
+      <?php
     }
 }
 

@@ -40,10 +40,6 @@ include_once 'app/buscador.inc.php';
 		</div>
 		<table class="horario">
 			<tr>
-				<th>Lunes</th>
-				<td>8:00</td>
-			</tr>
-			<tr>
 			</tr>
 			<br>
 			<?php EscritorNegocios::escribirHorarios(); ?>
