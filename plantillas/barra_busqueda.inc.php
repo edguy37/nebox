@@ -5,7 +5,7 @@ Conexion :: abrir_conexion();
 <header>
   <div class="logo">
     <a href="<?php echo RUTA_INDEX?>">
-      <img src="logo.png" alt="Inicio"> <!-- Cambiar link por ruta -->
+      <img src="<?php echo RUTA_INDEX."logo.png"?>" alt="Inicio"> <!-- Cambiar link por ruta -->
     </a>
   </div>
   <form class="buscador" id="buscador" action="<?php echo RUTA_INDEX ?>" method="get">

@@ -54,25 +54,6 @@ class EscritorNegocios{
         <?php
     }
 
-    public static function escribirExtras(){
-      global $url;
-      $extras = RepositorioNegocio::obtenerExtras(Conexion::obtener_conexion(), $url);
-      self::escribirExtra($extras);
-    }
-
-    public static function escribirExtra($extras){
-      if (!isset($extras)){
-        return;
-      }?>
-      <div class="seccion-extras caja-info container">
-    		<span><?php echo $extras -> obtenerTarjeta(); ?></span>
-        <span><?php echo $extras -> obtenerAlcohol(); ?></span>
-        <span><?php echo $extras -> obtenerEstacionamiento(); ?></span>
-        <span><?php echo $extras -> obtenerBicis(); ?></span>
-    	</div>
-      <?php
-    }
-
     public static function escribirHorarios(){
       global $url;
       $negocios = RepositorioNegocio::obtenerNegocioConHorario(Conexion::obtener_conexion(), $url);
@@ -89,31 +70,31 @@ class EscritorNegocios{
         return;
       }?>
       <tr>
-				<th>Lunes</th>
+				<th class="horario-padding">Lunes</th>
 				<td><?php echo $negocio -> obtenerLunes(); ?></td>
 			</tr>
       <tr>
 				<th>Martes</th>
-				<td><?php echo $negocio -> obtenerMartes(); ?></td>
+				<td class="horario-padding"><?php echo $negocio -> obtenerMartes(); ?></td>
 			</tr>
       <tr>
-				<th>Miercoles</th>
+				<th class="horario-padding">Miercoles</th>
 				<td><?php echo $negocio -> obtenerMiercoles(); ?></td>
 			</tr>
       <tr>
-				<th>Jueves</th>
+				<th class="horario-padding">Jueves</th>
 				<td><?php echo $negocio -> obtenerJueves(); ?></td>
 			</tr>
       <tr>
-				<th>Viernes</th>
+				<th class="horario-padding">Viernes</th>
 				<td><?php echo $negocio -> obtenerViernes(); ?></td>
 			</tr>
       <tr>
-				<th>Sabado</th>
+				<th class="horario-padding">Sabado</th>
 				<td><?php echo $negocio -> obtenerSabado(); ?></td>
 			</tr>
       <tr>
-				<th>Domingo</th>
+				<th class="horario-padding">Domingo</th>
 				<td><?php echo $negocio -> obtenerDomingo(); ?></td>
 			</tr>
       <?php

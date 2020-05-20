@@ -7,53 +7,67 @@ include_once 'plantillas/declaracion.inc.php';
 include_once 'plantillas/barra_busqueda.inc.php';
 include_once 'app/buscador.inc.php';
 ?>
-<div class="container text-center nombre-chica">
-	<h1><?php echo $negocio -> obtenerNombre();?></h1>
-</div>
 <div class="container-fluid">
-	<div class="row">
-		<div class="col-md4">
-			<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg1(); ?>" alt="">
+	<div class="row justify-content-center">
+		<div class="col-md-6 col-lg-8 descripcion-xl">
+			<div class="algo">
+				<div class="container text-center nombre-chica">
+					<h1><?php echo $negocio -> obtenerNombre();?></h1>
+				</div>
+				<div class="justificar container"> <p><?php echo $negocio -> obtenerDescripcion();?></p> </div>
+			</div>
+			<div class="imagenes">
+				<div class="row justify-content-center">
+					<div class="margen-imgs col-12 col-sm-10 col-md-10">
+						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg1(); ?>" alt="">
+					</div>
+					<div class="margen-imgs col-12 col-sm-10 col-md-10">
+						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg2(); ?>" alt="">
+					</div>
+					<div class="margen-imgs col-12 col-sm-10 col-md-10">
+						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg3(); ?>" alt="">
+					</div>
+					<div class="margen-imgs col-12 col-sm-10 col-md-10">
+						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg4(); ?>" alt="">
+					</div>
+					<div class="margen-imgs col-12 col-sm-10 col-md-10">
+						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg5(); ?>" alt="">
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="col-md4">
-			<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg2(); ?>" alt="">
-		</div>
-		<div class="col-md4">
-			<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg3(); ?>" alt="">
-		</div>
-		<div class="col-md4">
-			<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg4(); ?>" alt="">
-		</div>
-		<div class="col-md4">
-			<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg5(); ?>" alt="">
+		<div class="col-md-6 col-lg-4">
+			<div class="informacion container">
+				<div class="row">
+					<div class="col-12">
+						<div class="seccion-horario caja-info container">
+							<div class="">
+								<h4 class="horario-titulo">
+									<i class="fa fa-clock-o" aria-hidden="true"></i> Horario
+								</h4>
+							</div>
+							<table class="horario">
+								<?php EscritorNegocios::escribirHorarios(); ?>
+							</table>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="container caja-info">
+							<div class="info-element">
+								<a href="tel:<?php echo $negocio -> obtenerTelefono();?>">
+										<i class="fas fa-phone fa-rotate-90"></i>
+										<?php echo $negocio -> obtenerTelefono();?>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
 <br>
-<div class="container"><?php echo $negocio -> obtenerDescripcion();?></div>
-<div class="informacion container">
-	<?php EscritorNegocios::escribirExtras(); ?>
-	<div class="seccion-horario caja-info container">
-		<div class="">
-			<h4 class="horario-titulo">
-				<i class="fa fa-clock-o" aria-hidden="true"></i> Horario
-			</h4>
-		</div>
-		<table class="horario">
-			<?php EscritorNegocios::escribirHorarios(); ?>
-		</table>
-	</div>
-</div>
-<div class="container text-center">
-	<h3>Número de teléfono: </h3>
-	<a href="tel:<?php echo $negocio -> obtenerTelefono();?>">
-     <h3>
-     	<?php echo $negocio -> obtenerTelefono();?>
-     	<i class="fas fa-phone-square"></i>
-     </h3>
-	</a>
-	<!--<h3>Número de teléfono: <?php echo $negocio -> obtenerTelefono();?></h3>	-->
-</div>
+
 <br>
 <div>
     <a href="<?php echo RUTA_INSCRIPCION?>">

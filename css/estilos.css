@@ -13,8 +13,7 @@ header{
 	background: #2c3e50;
 	width:100%;
 	padding-left: 20px;
-	position: fixed;
-	z-index: 99;
+	position: relative;
 
 	display:flex;
 	justify-content:space-between;
@@ -67,27 +66,18 @@ header .logo a{
 .txt-buscador {
 	width: 50%;
 }
-
-.jumbotron {
-	background: #428BCA;
-	height: 100px;
-	padding: 20px 0;
-	margin-bottom: 5px;
-}
-
 .girls-content {
 	padding-right: 25px;
 	padding-left: 25px;
-	padding-top: 78px;
-}
-.resultados {
-	padding-top: 25px;
 }
 .resultados-principales > div {
 	margin: 20px 0px;
 }
+.categorias{
+		width: 100%;
+}
 .nombre-chica{
-	padding-top: 71px;
+	margin-top: 1em;
 }
 
 .girls-imgs {
@@ -181,13 +171,33 @@ a.resumen-link:hover{
 	display: none;
 }
 /* ========================================= pagina negocio =================================== */
+.justificar{
+	text-align: justify;
+}
+.margen-imgs{
+	margin-bottom: 5px;
+}
+.informacion{
+	position: sticky;
+	top: -30px;
+}
 .caja-info{
 	border: 1px solid #ddd;
 	border-radius: 5px;
+	padding-bottom: 5px;
+}
+.seccion-horario{
+	margin-top: 64px;
 }
 .horario-titulo{
 	padding: 8px 0px;
 	border-bottom: 1px solid #ddd;
+}
+.horario-padding{
+	padding-right: 1em;
+}
+.info-element{
+	margin: 8px 0px;
 }
 /* ========================================= pagina inscripcion =================================== */
 .portada-inscripcion{
@@ -318,16 +328,36 @@ footer{
 	width: 100%;
 	height:100%;
 }
+/*================================================ breakpoints ========================================*/
+@media screen and (min-width: 1800px){
+	.categorias{
+			width: 60%;
+	}
+	.informacion{
+		width: 60%;
+	}
+	.descripcion-xl{
+		max-width: 40%;
+	}
+}
+@media screen and (min-width: 1600px) and (max-width: 1800px){
+	.categorias{
+			width: 80%;
+	}
+}
+@media screen and (max-width: 767px){
+	.informacion{
+		position: relative !important;
+		top: 0px;
+	}
+	.seccion-horario{
+		margin-top: 5px;
+	}
+}
 @media screen and (max-width: 800px){
 	header{
 		padding-left: 0;
 		flex-direction:column;
-	}
-	.girls-content {
-		padding-top: 81px;
-	}
-	.nombre-chica{
-		padding-top: 81px;
 	}
 	.buscador{
 		padding: 0;
@@ -346,12 +376,6 @@ footer{
 	}
 }
 @media screen and (max-width: 600px){
-	.girls-content {
-		padding-top: 147px;
-	}
-	.nombre-chica{
-		padding-top: 140px;
-	}
 	.buscador{
 		flex-direction:column;
 		padding-left: 0;
