@@ -69,6 +69,7 @@ CREATE TABLE `negocios` (
   `fecha_reg` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `correo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `num_tel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `direccion` varchar(100) COLLATE utf8_unicode_ci DEFAULT 'Sin direccion',
   `precio` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
   `promocion` int(40) NOT NULL DEFAULT '0'

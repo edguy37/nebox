@@ -59,6 +59,10 @@ include_once 'app/buscador.inc.php';
 										<?php echo $negocio -> obtenerTelefono();?>
 								</a>
 							</div>
+							<div class="info-element">
+										<i class="fas fa-map-marker-alt"></i>
+										<?php echo $negocio -> obtenerDireccion();?>
+							</div>
 						</div>
 					</div>
 				</div>

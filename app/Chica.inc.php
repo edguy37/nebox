@@ -12,6 +12,7 @@ class Chica{
 	private $fechaRegistro;
 	private $correo;
 	private $telefono;
+	private $direccion;
 	private $categorias;
 	private $ubicacion;
 	private $precio;
@@ -29,8 +30,8 @@ class Chica{
 	private $estacionamiento;
 	private $est_bicis;
 
-	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $categorias, $ubicacion,
-	$precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis){
+	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $direccion, $categorias,
+	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
 		$this -> descripcion = $descripcion;
@@ -43,6 +44,7 @@ class Chica{
 		$this -> fecha_registro = $fechaRegistro;
 		$this -> correo = $correo;
 		$this -> telefono = $telefono;
+		$this -> direccion = $direccion;
 		$this -> categorias = $categorias;
 		$this -> ubicacion = $ubicacion;
 		$this -> precio = $precio;
@@ -108,6 +110,10 @@ class Chica{
 
 	public function obtenerTelefono(){
 		return $this -> telefono;
+	}
+
+	public function obtenerDireccion(){
+		return $this -> direccion;
 	}
 
 	public function obtenerCategorias(){
@@ -217,6 +223,10 @@ class Chica{
 
 	public function cambiarTelefono($telefono){
 		$this -> telefono = $telefono;
+	}
+
+	public function cambiarDireccion($direccion){
+		$this -> direccion = $direccion;
 	}
 
 	public function cambiarCategorias($categorias){
