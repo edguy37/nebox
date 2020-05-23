@@ -4,7 +4,7 @@
 //include_once 'app/Chica.inc.php';
 //include_once 'app/RepositorioChica.inc.php';
 include_once 'plantillas/declaracion.inc.php';
-include_once 'plantillas/barra_busqueda.inc.php';
+include_once 'plantillas/barra_atras.inc.php';
 include_once 'app/buscador.inc.php';
 ?>
 <div class="container-fluid">

@@ -33,6 +33,18 @@ header .logo a{
 	text-decoration: none;
 	line-height: 50px;
 }
+.logo {
+    max-width: 250px;
+}
+.atras{
+	justify-content: start;
+}
+.logo-atras{
+	max-width: 180px;
+}
+.atras h4 {
+	color: white;
+}
 .img-width {
     width: 100%;
 }
@@ -41,9 +53,6 @@ header .logo a{
 }
 .img-tenue:hover{
 	filter:brightness(100%);
-}
-.logo {
-    max-width: 250px;
 }
 .buscador{
 	padding: 20px 50px;
@@ -363,7 +372,9 @@ footer{
 		padding: 0;
 		padding-left: 100px;
 		width: 90%
-
+	}
+	.atras{
+	flex-direction: row;
 	}
 	.contacto{
 		flex-direction:column;
