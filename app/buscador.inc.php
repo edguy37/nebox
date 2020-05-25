@@ -42,15 +42,18 @@ class EscritorNegocios{
             return;
         }
         ?>
-        <div class="col-md-3 girls-imgs">
+        <div class="col-12 col-sm-6 col-md-4">
             <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
                 <img src="<?php echo $negocio -> obtenerLogo();?>"class="img-responsive img-width">
                 <div class="resumen">
                 <h3 class="resumen-acortador"><?php echo $negocio -> obtenerNombre();?></h3>
-                <h3><?php echo "$".$negocio -> obtenerPrecio()."/h";?></h3>
                 </div>
             </a>
         </div>
+          <div style="background-image: url(<?php echo $negocio -> obtenerLogo();?>);" class="centrar-imagen caja-categoria">
+            <a href="#" class="caja-link-categoria"></a>
+            <a href="#" class="titulo-link-categoria"><?php echo $negocio -> obtenerNombre();?></a>
+          </div>
         <?php
     }
 
