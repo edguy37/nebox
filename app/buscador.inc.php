@@ -43,17 +43,17 @@ class EscritorNegocios{
         }
         ?>
         <div class="col-12 col-sm-6 col-md-4">
-            <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
+      <!--      <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
                 <img src="<?php echo $negocio -> obtenerLogo();?>"class="img-responsive img-width">
                 <div class="resumen">
                 <h3 class="resumen-acortador"><?php echo $negocio -> obtenerNombre();?></h3>
                 </div>
-            </a>
+            </a> -->
+            <div style="background-image: url(<?php echo $negocio -> obtenerLogo();?>);" class="centrar-imagen caja-categoria">
+              <a href="#" class="caja-link-categoria"></a>
+              <a href="#" class="titulo-link-categoria"><?php echo $negocio -> obtenerNombre();?></a>
+            </div>
         </div>
-          <div style="background-image: url(<?php echo $negocio -> obtenerLogo();?>);" class="centrar-imagen caja-categoria">
-            <a href="#" class="caja-link-categoria"></a>
-            <a href="#" class="titulo-link-categoria"><?php echo $negocio -> obtenerNombre();?></a>
-          </div>
         <?php
     }
 
@@ -108,6 +108,9 @@ class EscritorCategorias{
     public static function escribirCategorias(){
       $categorias = RepositorioCategoria::obtenerCategorias(Conexion::obtener_conexion());
       if (!empty($categorias)){
+        ?> <div class="titulo-categorias">
+            <h3>Explora nuestras categorias</h3>
+          </div> <?php
         foreach ($categorias as $categoria){
           self::escribirCategoria($categoria);
         }

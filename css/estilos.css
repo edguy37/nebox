@@ -75,12 +75,25 @@ header .logo a{
 .txt-buscador {
 	width: 50%;
 }
+/*============================================Home=====================================================*/
 .girls-content {
 	padding-right: 25px;
 	padding-left: 25px;
 }
+.resultados-principales{
+	justify-content: center;
+}
 .resultados-principales > div {
 	margin: 20px 0px;
+}
+.titulo-categorias{
+	width: 100%;
+	text-align: center;
+	margin-top: -22px;
+	margin-bottom: 15px;
+}
+.negocios{
+	width: 100%;
 }
 .categorias{
 		width: 100%;
@@ -344,6 +357,9 @@ footer{
 }
 /*================================================ breakpoints ========================================*/
 @media screen and (min-width: 1800px){
+	.negocios{
+		width: 60%;
+	}
 	.categorias{
 			width: 60%;
 	}
@@ -355,6 +371,9 @@ footer{
 	}
 }
 @media screen and (min-width: 1600px) and (max-width: 1800px){
+	.negocios{
+		width: 80%;
+	}
 	.categorias{
 			width: 80%;
 	}
