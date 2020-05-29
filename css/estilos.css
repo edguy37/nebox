@@ -89,8 +89,14 @@ header .logo a{
 .titulo-categorias{
 	width: 100%;
 	text-align: center;
-	margin-top: -22px;
+	/*margin-top: -22px;*/
 	margin-bottom: 15px;
+}
+.titulo-negocios{
+	width: 100%;
+	/*margin-top: -22px;*/
+	text-align: center;
+	margin-bottom: -5px;
 }
 .negocios{
 	width: 100%;
@@ -110,20 +116,22 @@ header .logo a{
 	filter:brightness(110%);
 }
 .resumen{
+	position: relative;
+	top: 5em;  /*086px;*/
 	display: flex;
 	justify-content:space-between;
 	flex-flow:row nowrap;
 	padding-left: 5px;
 	padding-right: 5px;
 	width: 100%;
-	background-color: #111;
-	border: 1px solid #191919;
+	background-color: #2c3e50;
 	border-radius: 0.4em;
 }
 .resumen-acortador{
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	color: whitesmoke;
 }
 a.resumen-link:link{
 	color: #fe00d3;
@@ -133,7 +141,7 @@ a.resumen-link:visited{
 }
 a.resumen-link:hover{
 	color: #fe00d3;
-	text-decoration: none;
+	text-decoration: none !important;
 }
 #link {
 	position: absolute;
@@ -158,11 +166,38 @@ a.resumen-link:hover{
 	background-size: cover;
 	background-position: center;
 }
+.caja-negocio{
+	position: relative;
+	padding: 3em 0;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
 .caja-categoria{
 	position: relative;
 	padding: 3em 0;
 	margin-bottom: 20px;
 	border-radius: 5px;
+}
+.caja-link-negocio{
+	display: block;
+	height: 8.1em;
+	width: 100%;
+	position: absolute;
+	margin-top: -3em;
+	z-index: 20;
+}
+.caja-link-negocio:after{
+	content: ' ';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 5px;
+	background: rgba(0, 0, 0, 0.15);
+}
+.caja-link-negocio:hover:after{
+	display: none;
 }
 .caja-link-categoria{
 	display: block;

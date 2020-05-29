@@ -19,6 +19,9 @@ class EscritorNegocios{
         $negocios = RepositorioNegocio::obtenerNegocioPromo(Conexion::obtener_conexion());
 
         if (count($negocios)) {
+          ?> <div class="titulo-negocios">
+            <h3>Mira estos negocios</h3>
+          </div> <?php
             foreach ($negocios as $negocio) {
                 self::escribirNegocio($negocio);
             }
@@ -42,16 +45,14 @@ class EscritorNegocios{
             return;
         }
         ?>
-        <div class="col-12 col-sm-6 col-md-4">
-      <!--      <a class="resumen-link" href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
-                <img src="<?php echo $negocio -> obtenerLogo();?>"class="img-responsive img-width">
+        <div class="col-12 col-sm-6 col-md-4 mt-4">
+            <div style="background-image: url(<?php echo $negocio -> obtenerLogo();?>);" class="centrar-imagen caja-negocio">
+              <a href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>" class="caja-link-negocio"></a>
+              <a href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
                 <div class="resumen">
-                <h3 class="resumen-acortador"><?php echo $negocio -> obtenerNombre();?></h3>
+                  <h5 class="resumen-acortador"><?php echo $negocio -> obtenerNombre();?></h5>
                 </div>
-            </a> -->
-            <div style="background-image: url(<?php echo $negocio -> obtenerLogo();?>);" class="centrar-imagen caja-categoria">
-              <a href="#" class="caja-link-categoria"></a>
-              <a href="#" class="titulo-link-categoria"><?php echo $negocio -> obtenerNombre();?></a>
+              </a>
             </div>
         </div>
         <?php
