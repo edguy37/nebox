@@ -63,6 +63,12 @@ include_once 'app/buscador.inc.php';
 										<i class="fas fa-map-marker-alt"></i>
 										<?php echo $negocio -> obtenerDireccion();?>
 							</div>
+							<div class="info-element">
+								<a href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerTelefono();?>">
+									<i class="fab fa-whatsapp"></i>
+									Envíanos un WhatsApp
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
