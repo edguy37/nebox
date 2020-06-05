@@ -29,9 +29,11 @@ class Chica{
 	private $alcohol;
 	private $estacionamiento;
 	private $est_bicis;
+	private $valor_promo;
+	private $descripcion_promo;
 
 	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $direccion, $categorias,
-	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis){
+	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis, $valor_promo, $descripcion_promo){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
 		$this -> descripcion = $descripcion;
@@ -61,6 +63,8 @@ class Chica{
 		$this -> alcohol = $alcohol;
 		$this -> estacionamiento = $estacionamiento;
 		$this -> est_bicis = $est_bicis;
+		$this -> valor_promo = $valor_promo;
+		$this -> promocion_promo = $descripcion_promo;
 
 	}
 
@@ -180,6 +184,15 @@ class Chica{
 		return $this -> est_bicis;
 	}
 
+	public function obtenerValorPromo(){
+		return $this -> valor_promo;
+	}
+
+	public function obtenerDescripcionPromo(){
+		return $this -> descripcion_promo;
+	}
+
+// ================================================setters========================================
 	public function cambiarNombre($nombre){
 		$this -> nombre = $nombre;
 	}
@@ -293,4 +306,11 @@ class Chica{
 		$this -> est_bicis = $est_bicis;
 	}
 
+	public function cambiarValorPromo($valor_promo){
+		$this -> valor_promo = $valor_promo;
+	}
+
+	public function cambiarDescripcionPromo($descripcion_promo){
+		$this -> descripcion_promo = $descripcion_promo;
+	}
 }

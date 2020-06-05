@@ -11,7 +11,12 @@ class RepositorioNegocio{
 
 		if(isset($conexion)){
 			try{
-				$sql = "SELECT * FROM chicas LEFT OUTER JOIN horario ON chicas.CH_ID=horario.negocio_id LEFT OUTER JOIN extras ON chicas.CH_ID=extras.negocio_id WHERE CH_ID LIKE :id";
+				$sql = "SELECT * FROM chicas
+								LEFT OUTER JOIN horario ON chicas.CH_ID=horario.negocio_id
+								LEFT OUTER JOIN extras ON chicas.CH_ID=extras.negocio_id
+								LEFT OUTER JOIN negocio_promos ON chicas.CH_ID=negocio_promos.negocio_id
+								LEFT OUTER JOIN promociones ON  negocio_promos.promo_id=promociones.promo_id
+								WHERE CH_ID LIKE :id";
 				$sentencia = $conexion -> prepare($sql);
 				$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
 				$sentencia -> execute();
@@ -23,7 +28,7 @@ class RepositorioNegocio{
 						$resultado['IMG3'], $resultado['IMG4'], $resultado['IMG5'], $resultado['FECHA_REG'], $resultado['CORREO'], $resultado['NUM_TEL'], $resultado['direccion'],
 						$resultado['CATEGORIA'], $resultado['UBICACION'], $resultado['PRECIO'], $resultado['ACTIVO'], $resultado['PROMOCION'], $resultado['lunes'],
 						$resultado['martes'], $resultado['miercoles'], $resultado['jueves'], $resultado['viernes'], $resultado['sabado'], $resultado['domingo'],
-						$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis']
+						$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis'], $resultado['valor'], $resultado['descripcion_promo']
 						);
 				}
 				else{
@@ -54,7 +59,7 @@ class RepositorioNegocio{
 							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
 							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
 							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
-							$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis']
+							$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis'], $resultado, $resultado
 							);
 					}
 					else{
@@ -85,7 +90,7 @@ class RepositorioNegocio{
 							$fila['IMG3'], $fila['IMG4'], $fila['IMG5'], $fila['FECHA_REG'], $fila['CORREO'], $fila['NUM_TEL'], $fila['direccion'],
 							$fila['CATEGORIA'], $fila['UBICACION'], $fila['PRECIO'], $fila['ACTIVO'], $fila['PROMOCION'], $fila['lunes'],
 							$fila['martes'], $fila['miercoles'], $fila['jueves'], $fila['viernes'], $fila['sabado'], $fila['domingo'],
-							$fila, $fila, $fila, $fila
+							$fila, $fila, $fila, $fila, $fila, $fila
 						);
 					}
 				}
@@ -111,7 +116,7 @@ class RepositorioNegocio{
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
 						$negocios[] = new 	Chica(
-							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
+							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
 						);
 					}
 				}
@@ -138,7 +143,7 @@ class RepositorioNegocio{
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
 						$negocios[] = new Chica(
-							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
+							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
 						);$negocio = null;
 					}
 				}
