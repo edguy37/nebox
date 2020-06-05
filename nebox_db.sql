@@ -72,7 +72,8 @@ CREATE TABLE `negocios` (
   `direccion` varchar(100) COLLATE utf8_unicode_ci DEFAULT 'Sin direccion',
   `precio` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
-  `promocion` int(40) NOT NULL DEFAULT '0'
+  `promocion` int(40) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`promo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -177,7 +178,7 @@ CREATE TABLE horarios (
     day int NOT NULL,
     CONSTRAINT fk_nid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
 );
-INSERT INTO horarios(negocio_id, open_t, close_t, day) VALUES (51, '07:00:00', '16:00:00', 0)
+INSERT INTO horarios(negocio_id, open_t, close_t, day) VALUES (51, '07:00:00', '16:00:00', 0);
 
 
 CREATE TABLE horario (
@@ -191,7 +192,7 @@ CREATE TABLE horario (
     domingo VARCHAR(50),
     CONSTRAINT fk_negid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
 );
-INSERT INTO horario(negocio_id, lunes, martes, miercoles, jueves, viernes, sabado, domingo) VALUES (51, '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00','07:00 - 16:00','08:00 - 13:00', 'Cerrado')
+INSERT INTO horario(negocio_id, lunes, martes, miercoles, jueves, viernes, sabado, domingo) VALUES (51, '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00','07:00 - 16:00','08:00 - 13:00', 'Cerrado');
 
 CREATE TABLE extras (
     negocio_id tinyint(12) NOT NULL,
@@ -201,4 +202,20 @@ CREATE TABLE extras (
     est_bicis int(40) DEFAULT 0,
     CONSTRAINT fk_negocioid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
 );
-INSERT INTO extras(negocio_id, tarjeta, alcohol, estacionamiento, est_bicis) VALUES (51, 1, 1, 1, 1)
+INSERT INTO extras(negocio_id, tarjeta, alcohol, estacionamiento, est_bicis) VALUES (51, 1, 1, 1, 1);
+
+CREATE TABLE promociones (
+    promo_id tinyint(12) NOT NULL AUTO_INCREMENT,
+    valor tinyint(12),
+    descripcion_promo varchar(250),
+    PRIMARY KEY (`promo_id`)
+);
+INSERT INTO promociones(valor, descripcion_promo) VALUES (20, 'maquillaje');
+
+CREATE TABLE negocio_promos (
+    negocio_id tinyint(12) NOT NULL,
+    promo_id tinyint(12) NOT NULL,
+    CONSTRAINT fk_negpromoid FOREIGN KEY(negocio_id) REFERENCES negocios(nid),
+    CONSTRAINT fk_promoid FOREIGN KEY(promo_id) REFERENCES promociones(promo_id)
+);
+INSERT INTO negocio_promos(negocio_id, promo_id) VALUES (51, 0);
