@@ -2,6 +2,7 @@
 include_once 'Conexion.inc.php';
 include_once 'RepositorioNegocio.inc.php';
 include_once 'RepositorioUbicacion.inc.php';
+include_once 'RepositorioPromo.inc.php';
 include_once 'Chica.inc.php';
 include_once 'Ubicacion.inc.php';
 
@@ -103,6 +104,49 @@ class EscritorNegocios{
 			</tr>
       <?php
     }
+}
+
+class EscritorPromociones{
+  public static function escribirPromosPrincipales(){
+      $promos = RepositorioPromo::obtenerPromociones(Conexion::obtener_conexion());
+
+      if (count($promos)) {
+        ?> <div class="titulo-negocios">
+          <h3>Nuestras nuevas promociones</h3>
+        </div> <?php
+          foreach ($promos as $promo) {
+              self::escribirPromo($promo);
+          }
+      }
+      else {
+        echo "No se encontraron promociones";
+      }
+  }
+  public static function escribirPromo($promo){
+      if (!isset($promo)){
+          return;
+      }
+      ?>
+      <div class="col-12 col-sm-6 col-md-4 mt-4 d-flex">
+          <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="centrar-imagen caja-promo">
+            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio"></a>
+            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>">
+              <div class="resumen-promo">
+                <h5 class="resumen-acortador"><?php echo $promo -> obtenerNegocio();?></h5>
+              </div>
+            </a>
+          </div>
+          <div class="promo-box">
+            <div class="valor">
+              <?php echo $promo -> obtenerValor(); ?>%
+            </div>
+            <div class="descripcion-promo">
+              <?php echo $promo -> obtenerDescripcion(); ?>
+            </div>
+          </div>
+      </div>
+      <?php
+  }
 }
 
 class EscritorCategorias{

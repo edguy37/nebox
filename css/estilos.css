@@ -142,6 +142,26 @@ header .logo-atras a{
 	text-align: center;
 	margin-bottom: -5px;
 }
+.promo-box{
+	background-color: #0b9d7b;
+	width: 40%;
+	height: 108%;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.valor{
+	margin-top: 1rem;
+	text-align: center;
+	font-size: 2em;
+	font-weight: 700;
+	color: greenyellow;
+}
+.descripcion-promo{
+	text-align: center;
+	margin-top: 10%;
+	font-weight: 700;
+	line-height: 18px;
+}
 .negocios{
 	width: 100%;
 }
@@ -158,6 +178,18 @@ header .logo-atras a{
 }
 .girls-imgs:hover{
 	filter:brightness(110%);
+}
+.resumen-promo{
+	position: relative;
+	top: 5em;  /*086px;*/
+	display: flex;
+	justify-content:space-between;
+	flex-flow:row nowrap;
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 100%;
+	background-color: #1479b4;
+	border-bottom-left-radius: 0.4em;
 }
 .resumen{
 	position: relative;
@@ -209,6 +241,13 @@ a.resumen-link:hover{
 .centrar-imagen{
 	background-size: cover;
 	background-position: center;
+}
+.caja-promo{
+	width: 100%;
+	position: relative;
+	padding: 3em 0;
+	margin-bottom: 20px;
+	border-top-left-radius: 5px;
 }
 .caja-negocio{
 	position: relative;

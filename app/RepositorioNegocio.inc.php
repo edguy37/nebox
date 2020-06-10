@@ -15,7 +15,7 @@ class RepositorioNegocio{
 								LEFT OUTER JOIN horario ON chicas.CH_ID=horario.negocio_id
 								LEFT OUTER JOIN extras ON chicas.CH_ID=extras.negocio_id
 								LEFT OUTER JOIN negocio_promos ON chicas.CH_ID=negocio_promos.negocio_id
-								LEFT OUTER JOIN promociones ON  negocio_promos.promo_id=promociones.promo_id
+								LEFT OUTER JOIN promociones ON  negocio_promos.promo_id=promociones.promoid
 								WHERE CH_ID LIKE :id";
 				$sentencia = $conexion -> prepare($sql);
 				$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
@@ -144,7 +144,7 @@ class RepositorioNegocio{
 					foreach ($resultado as $fila) {
 						$negocios[] = new Chica(
 							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
-						);$negocio = null;
+						);
 					}
 				}
 			}	 catch(PDOException $ex){

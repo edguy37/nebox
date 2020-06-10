@@ -208,6 +208,7 @@ CREATE TABLE promociones (
     promo_id tinyint(12) NOT NULL AUTO_INCREMENT,
     valor tinyint(12),
     descripcion_promo varchar(250),
+    img varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
     PRIMARY KEY (`promo_id`)
 );
 INSERT INTO promociones(valor, descripcion_promo) VALUES (20, 'maquillaje');
