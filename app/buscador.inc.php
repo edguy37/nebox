@@ -160,7 +160,7 @@ class EscritorPromociones{
           </div>
           <div class="promo-box">
             <div class="valor">
-              <?php echo $promo -> obtenerValor(); ?>%
+              <?php echo $promo -> obtenerValor(); ?>
             </div>
             <div class="descripcion-promo">
               <?php echo $promo -> obtenerDescripcion(); ?>
@@ -186,7 +186,7 @@ class EscritorPromociones{
           </div>
           <div class="promo-box">
             <div class="valor">
-              <?php echo $promo -> obtenerValor(); ?>%
+              <?php echo $promo -> obtenerValor(); ?>
             </div>
             <div class="descripcion-promo">
               <?php echo $promo -> obtenerDescripcion(); ?>

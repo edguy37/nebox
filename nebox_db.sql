@@ -73,6 +73,9 @@ CREATE TABLE `negocios` (
   `precio` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
   `promocion` int(40) NOT NULL DEFAULT '0',
+  `facebook` VARCHAR(200) COLLATE utf8_unicode_ci DEFAULT NULL;
+  `insta` VARCHAR(200) COLLATE utf8_unicode_ci DEFAULT NULL;
+  `twitter` VARCHAR(200)COLLATE utf8_unicode_ci DEFAULT NULL;
   PRIMARY KEY (`promo_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -206,7 +209,7 @@ INSERT INTO extras(negocio_id, tarjeta, alcohol, estacionamiento, est_bicis) VAL
 
 CREATE TABLE promociones (
     promo_id tinyint(12) NOT NULL AUTO_INCREMENT,
-    valor tinyint(12),
+    valor varchar(50) COLLATE utf8_unicode_520_ci,
     descripcion_promo varchar(250),
     img varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
     PRIMARY KEY (`promo_id`)
