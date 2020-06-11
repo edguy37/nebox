@@ -322,9 +322,14 @@ a.resumen-link:hover{
 .margen-imgs{
 	margin-bottom: 5px;
 }
+.promos{
+	margin-bottom: 2em;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
 .informacion{
 	position: sticky;
-	top: -30px;
+	top: 30px;
 }
 .caja-info{
 	border: 1px solid #ddd;
@@ -332,7 +337,6 @@ a.resumen-link:hover{
 	padding-bottom: 5px;
 }
 .seccion-horario{
-	margin-top: 64px;
 }
 .horario-titulo{
 	padding: 8px 0px;

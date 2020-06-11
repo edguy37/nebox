@@ -8,12 +8,15 @@ include_once 'plantillas/barra_atras.inc.php';
 include_once 'app/buscador.inc.php';
 ?>
 <div class="container-fluid">
+	<div class="container text-center nombre-chica">
+		<h1><?php echo $negocio -> obtenerNombre();?></h1>
+	</div>
 	<div class="row justify-content-center">
 		<div class="col-md-6 col-lg-8 descripcion-xl">
+			<div class="row container promos">
+				<?php EscritorPromociones::escribirPromos(); ?>
+			</div>
 			<div class="algo">
-				<div class="container text-center nombre-chica">
-					<h1><?php echo $negocio -> obtenerNombre();?></h1>
-				</div>
 				<div class="justificar container"> <p><?php echo $negocio -> obtenerDescripcion();?></p> </div>
 			</div>
 			<div class="imagenes">
