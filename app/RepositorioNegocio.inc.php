@@ -95,7 +95,7 @@ class RepositorioNegocio{
 					}
 				}
 				else{
-					echo "No hay nada con horario";
+					echo "Horario no disponible";
 				}
 			} catch(PDOException $ex){
 				print 'ERROR'. $ex -> getMessage();

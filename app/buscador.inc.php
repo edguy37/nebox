@@ -151,20 +151,7 @@ class EscritorPromociones{
       ?>
       <div class="col-12 col-sm-6 col-md-4 mt-4 d-flex">
           <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="centrar-imagen caja-promo">
-            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio"></a>
-            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>">
-              <div class="resumen-promo">
-                <h5 class="resumen-acortador"><?php echo $promo -> obtenerNegocio();?></h5>
-              </div>
-            </a>
-          </div>
-          <div class="promo-box">
-            <div class="valor">
-              <?php echo $promo -> obtenerValor(); ?>
-            </div>
-            <div class="descripcion-promo">
-              <?php echo $promo -> obtenerDescripcion(); ?>
-            </div>
+            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio-promo"></a>
           </div>
       </div>
       <?php
@@ -177,20 +164,7 @@ class EscritorPromociones{
       ?>
       <div class="col-12 col-sm-6 col-md-6 mt-4 d-flex">
           <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="centrar-imagen caja-promo">
-            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio"></a>
-            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>">
-              <div class="resumen-promo">
-                <h5 class="resumen-acortador"><?php echo $promo -> obtenerNegocio();?></h5>
-              </div>
-            </a>
-          </div>
-          <div class="promo-box">
-            <div class="valor">
-              <?php echo $promo -> obtenerValor(); ?>
-            </div>
-            <div class="descripcion-promo">
-              <?php echo $promo -> obtenerDescripcion(); ?>
-            </div>
+            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio-promo"></a>
           </div>
       </div>
       <?php

@@ -245,9 +245,29 @@ a.resumen-link:hover{
 .caja-promo{
 	width: 100%;
 	position: relative;
-	padding: 3em 0;
-	margin-bottom: 20px;
-	border-top-left-radius: 5px;
+	padding: 5.5em 0;
+	border-radius: 5px;
+}
+.caja-link-negocio-promo{
+	display: block;
+	height: 11em;
+	width: 100%;
+	position: absolute;
+	margin-top: -5.5em;
+	z-index: 20;
+}
+.caja-link-negocio-promo:after{
+	content: ' ';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-radius: 5px;
+	background: rgba(0, 0, 0, 0.15);
+}
+.caja-link-negocio-promo:hover:after{
+	display: none;
 }
 .caja-negocio{
 	position: relative;
@@ -344,6 +364,9 @@ a.resumen-link:hover{
 }
 .horario-padding{
 	padding-right: 1em;
+}
+.horario tr {
+	vertical-align: top;
 }
 .info-element{
 	margin: 8px 0px;
