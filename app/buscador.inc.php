@@ -40,7 +40,6 @@ class EscritorNegocios{
         global $busqueda;
         global $ubic;
         $negocios = RepositorioNegocio::obtenerNegocioPorBusqueda(Conexion::obtener_conexion(),$busqueda,$ubic);
-
         if (count($negocios)) {
             foreach ($negocios as $negocio) {
                 self::escribirNegocio($negocio);
@@ -141,6 +140,17 @@ class EscritorPromociones{
         foreach ($promos as $promo) {
             self::escribirPromoNegocio($promo);
         }
+    }
+  }
+
+  public static function escribirPromoBusqueda(){
+    global $busqueda;
+    global $ubic;
+    $promociones = RepositorioPromo::obtenerPromocionesBusqueda(Conexion::obtener_conexion(), $busqueda, $ubic);
+    if (count($promociones)) {
+      foreach ($promociones as $promo) {
+        self::escribirPromo($promo);
+      }
     }
   }
 

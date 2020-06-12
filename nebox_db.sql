@@ -208,7 +208,7 @@ CREATE TABLE extras (
 INSERT INTO extras(negocio_id, tarjeta, alcohol, estacionamiento, est_bicis) VALUES (51, 1, 1, 1, 1);
 
 CREATE TABLE promociones (
-    promo_id tinyint(12) NOT NULL AUTO_INCREMENT,
+    promoid tinyint(12) NOT NULL AUTO_INCREMENT,
     valor varchar(50) COLLATE utf8_unicode_520_ci,
     descripcion_promo varchar(250),
     img varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',

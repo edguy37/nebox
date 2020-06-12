@@ -12,21 +12,13 @@ include_once 'app/Chica.inc.php';
 			<div class="row resultados-principales">
    					<?php
    					if (isset($_GET['search'])) {
-   						EscritorNegocios::escribirNegocios();
+							EscritorPromociones::escribirPromoBusqueda();
+   						/*EscritorNegocios::escribirNegocios();*/
    					}
             else{
 							?>
 							<div class="row negocios">
 								<?php Escritorpromociones::escribirPromosPrincipales(); ?>
-							</div>
-							<div class="row negocios">
-								<?php EscritorNegocios::escribirNegociosPromo(); ?>
-							</div>
-							<div class="row categorias">
-								<?php EscritorCategorias::escribirCategorias(); ?>
-							</div>
-							<div class="row ubicaciones">
-								<?php EscritorUbicaciones::escribirUbicaciones();?>
 							</div>
 							<?php
             }
