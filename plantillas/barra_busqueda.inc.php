@@ -10,7 +10,6 @@ Conexion :: abrir_conexion();
       </a>
     </div>
     <div class="titulo">
-      <h1>Encuentra descuentos</h1>
       <p>Nebox te ayuda a encontrar descuentos cerca de ti</p>
     </div>
     <form class="buscador" id="buscador" action="<?php echo RUTA_INDEX ?>" method="get">

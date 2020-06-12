@@ -15,6 +15,7 @@ define("RUTA_VIP", SERVIDOR."/vip.php");
 define("RUTA_NEGOCIO", SERVIDOR."/negocio");
 define("RUTA_INDEX", SERVIDOR."/");
 define("RUTA_ICONO", SERVIDOR."/slicon.png");
+define("RUTA_KREATIVER", SERVIDOR."/kreativer.png");
 
 //recursos
 define("RUTA_CSS", SERVIDOR . "/css/");

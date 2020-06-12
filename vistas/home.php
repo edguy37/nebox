@@ -26,11 +26,6 @@ include_once 'app/Chica.inc.php';
     		</div>
 		</section>
 	</div>
-  <div>
-    <a href="<?php echo RUTA_INSCRIPCION?>">
-      <img class="img-width img-tenue"src="http://www.sexyloveapp.com/bannersl.png" alt="¡Anúnciate!">
-    </a>
-  </div>
 <?php
 include_once 'plantillas/footer.inc.php';
 include_once 'plantillas/cierre.inc.php';

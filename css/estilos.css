@@ -61,7 +61,14 @@ header .logo-atras a{
 .titulo{
 	color: white;
 	text-align: center;
-	margin-bottom: 4em;
+	margin-bottom: 3em;
+}
+.titulo p{
+	margin: 2rem 0;
+	text-shadow: 1px 1px black;
+}
+.blank{
+	padding: 0 1.3em
 }
 .atras{
 	justify-content: start;
@@ -72,6 +79,10 @@ header .logo-atras a{
 }
 .atras h4 {
 	color: white;
+}
+.regresar{
+	padding: 0.6em 2em;
+	border: 2px solid #2a4e63;
 }
 .busqueda{
 	width: 100%;
@@ -491,10 +502,28 @@ select {
 }
 footer{
 	background: #2c3e50;
+	color: lightgray;
 	position: relative;
-	height: 2em;
 	width: 100%;
 	bottom: 0;
+	padding-top: 4em;
+	padding-bottom: 0.5em;
+}
+footer p{
+	margin-bottom: 0 !important;
+	margin-right: 1em;
+}
+.derechos{
+	font-size: 12px;
+	display: flex;
+	flex-flow: row;
+}
+.loguito{
+	display: inline-flex;
+	align-items: center;
+}
+.kreativer{
+	width: 5%;
 }
 .ajustable-pantalla{
 	width: 100%;
@@ -559,6 +588,9 @@ footer{
 	}
 	.seccion-horario{
 		margin-top: 5px;
+	}
+	.derechos{
+		flex-flow: column;
 	}
 }
 @media screen and (max-width: 800px){
