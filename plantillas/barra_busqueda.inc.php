@@ -19,7 +19,7 @@ Conexion :: abrir_conexion();
         </div>
         <div class="campo-ubicacion">
           <select class="form-control select-ubic" name="ubic">
-            <option value="Cancún">Cancún</option>
+            <!-- <option value="Cancún">Cancún</option> -->
             <option value="Mérida Yucatán">Mérida Yucatán</option>
           </select>
         </div>

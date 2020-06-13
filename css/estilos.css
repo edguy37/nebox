@@ -153,6 +153,10 @@ header .logo-atras a{
 	text-align: center;
 	margin-bottom: -5px;
 }
+.extend{
+	margin-top: 0.5rem !important;
+	padding: 0 0.2rem;
+}
 .promo-box{
 	background-color: #0b9d7b;
 	width: 40%;
@@ -349,6 +353,8 @@ a.resumen-link:hover{
 /* ========================================= pagina negocio =================================== */
 .justificar{
 	text-align: justify;
+	display: flex;
+	justify-content: center;
 }
 .margen-imgs{
 	margin-bottom: 5px;

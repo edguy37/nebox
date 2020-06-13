@@ -13,9 +13,6 @@ include_once 'app/buscador.inc.php';
 	</div>
 	<div class="row justify-content-center">
 		<div class="col-md-6 col-lg-8 descripcion-xl">
-			<div class="row container promos">
-				<?php EscritorPromociones::escribirPromos(); ?>
-			</div>
 			<div class="algo">
 				<div class="justificar container"> <p><?php echo $negocio -> obtenerDescripcion();?></p> </div>
 			</div>
@@ -67,7 +64,7 @@ include_once 'app/buscador.inc.php';
 										<?php echo $negocio -> obtenerDireccion();?>
 							</div>
 							<div class="info-element">
-								<a href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerTelefono();?>">
+								<a href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerTelefono();?>&text=Hola, vi tu promocion en Nebox">
 									<i class="fab fa-whatsapp"></i>
 									Envíanos un WhatsApp
 								</a>
