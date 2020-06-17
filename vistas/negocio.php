@@ -64,7 +64,7 @@ include_once 'app/buscador.inc.php';
 										<?php echo $negocio -> obtenerDireccion();?>
 							</div>
 							<div class="info-element">
-								<a href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerTelefono();?>&text=Hola, vi tu promocion en Nebox">
+								<a target="_blank"href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerWhats();?>&text=Hola, vi tu promocion en Nebox">
 									<i class="fab fa-whatsapp"></i>
 									Envíanos un WhatsApp
 								</a>

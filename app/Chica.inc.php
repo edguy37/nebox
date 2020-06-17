@@ -12,6 +12,7 @@ class Chica{
 	private $fechaRegistro;
 	private $correo;
 	private $telefono;
+	private $whats;
 	private $direccion;
 	private $categorias;
 	private $ubicacion;
@@ -32,7 +33,7 @@ class Chica{
 	private $valor_promo;
 	private $descripcion_promo;
 
-	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $direccion, $categorias,
+	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $whats, $direccion, $categorias,
 	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis, $valor_promo, $descripcion_promo){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
@@ -46,6 +47,7 @@ class Chica{
 		$this -> fecha_registro = $fechaRegistro;
 		$this -> correo = $correo;
 		$this -> telefono = $telefono;
+		$this -> whats = $whats;
 		$this -> direccion = $direccion;
 		$this -> categorias = $categorias;
 		$this -> ubicacion = $ubicacion;
@@ -114,6 +116,10 @@ class Chica{
 
 	public function obtenerTelefono(){
 		return $this -> telefono;
+	}
+
+	public function obtenerWhats(){
+		return $this -> whats;
 	}
 
 	public function obtenerDireccion(){
@@ -236,6 +242,10 @@ class Chica{
 
 	public function cambiarTelefono($telefono){
 		$this -> telefono = $telefono;
+	}
+
+	public function cambiarWhats($whats){
+		$this -> whats = $whats;
 	}
 
 	public function cambiarDireccion($direccion){

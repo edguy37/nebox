@@ -59,7 +59,7 @@ INSERT INTO `categorias` (`cat_id`, `categoria`, `imagen`) VALUES
 CREATE TABLE `negocios` (
   `nid` tinyint(12) NOT NULL,
   `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `descripcion` varchar(6000) COLLATE utf8_unicode_ci NOT NULL,
+  `descripcion` varchar(6000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `logo` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
   `img1` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
   `img2` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
@@ -68,9 +68,10 @@ CREATE TABLE `negocios` (
   `img5` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
   `fecha_reg` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `correo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `num_tel` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `num_tel` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `whats` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `direccion` varchar(100) COLLATE utf8_unicode_ci DEFAULT 'Sin direccion',
-  `precio` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `precio` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
   `promocion` int(40) NOT NULL DEFAULT '0',
   `facebook` VARCHAR(200) COLLATE utf8_unicode_ci DEFAULT NULL;
