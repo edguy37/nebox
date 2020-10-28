@@ -69,6 +69,12 @@ include_once 'app/buscador.inc.php';
 									Envíanos un WhatsApp
 								</a>
 							</div>
+							<div class="redes">
+								<a target="_blank" href="<?php echo $negocio -> obtenerFace(); ?>">	<i class="fa fa-facebook-square" aria-hidden="true"></i>
+								<?php echo substr($negocio -> obtenerFace(),24); ?> </a> <br>
+								<a target="_blank" href="<?php echo $negocio -> obtenerInsta(); ?>"> <i class="fa fa-instagram" aria-hidden="true"></i>
+									<?php echo substr($negocio -> obtenerInsta(),25); ?> </a> <br> </a>
+							</div>
 						</div>
 					</div>
 				</div>

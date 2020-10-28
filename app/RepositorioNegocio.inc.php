@@ -28,7 +28,7 @@ class RepositorioNegocio{
 						$resultado['IMG3'], $resultado['IMG4'], $resultado['IMG5'], $resultado['FECHA_REG'], $resultado['CORREO'], $resultado['NUM_TEL'], $resultado['whats'],
 						$resultado['direccion'], $resultado['CATEGORIA'], $resultado['UBICACION'], $resultado['PRECIO'], $resultado['ACTIVO'], $resultado['PROMOCION'], $resultado['lunes'],
 						$resultado['martes'], $resultado['miercoles'], $resultado['jueves'], $resultado['viernes'], $resultado['sabado'], $resultado['domingo'],
-						$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis'], $resultado['valor'], $resultado['descripcion_promo']
+						$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis'], $resultado['valor'], $resultado['descripcion_promo'], $resultado['facebook'], $resultado['insta']
 						);
 				}
 				else{
@@ -59,7 +59,7 @@ class RepositorioNegocio{
 							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
 							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
 							$resultado, $resultado, $resultado, $resultado, $resultado, $resultado, $resultado,
-							$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis'], $resultado, $resultado
+							$resultado['tarjeta'], $resultado['alcohol'], $resultado['estacionamiento'], $resultado['est_bicis'], $resultado, $resultado, $resultado, $resultado
 							);
 					}
 					else{
@@ -90,7 +90,7 @@ class RepositorioNegocio{
 							$fila['IMG3'], $fila['IMG4'], $fila['IMG5'], $fila['FECHA_REG'], $fila['CORREO'], $fila['NUM_TEL'], $fila['whats'],
 							 $fila['direccion'], $fila['CATEGORIA'], $fila['UBICACION'], $fila['PRECIO'], $fila['ACTIVO'], $fila['PROMOCION'], $fila['lunes'],
 							$fila['martes'], $fila['miercoles'], $fila['jueves'], $fila['viernes'], $fila['sabado'], $fila['domingo'],
-							$fila, $fila, $fila, $fila, $fila, $fila
+							$fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
 						);
 					}
 				}
@@ -116,7 +116,7 @@ class RepositorioNegocio{
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
 						$negocios[] = new 	Chica(
-							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
+							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
 						);
 					}
 				}
@@ -143,7 +143,7 @@ class RepositorioNegocio{
 				if (count($resultado)){
 					foreach ($resultado as $fila) {
 						$negocios[] = new Chica(
-							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
+							$fila['CH_ID'], $fila['NOMBRE'], $fila, $fila['LOGO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila['PRECIO'], $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila, $fila
 						);
 					}
 				}

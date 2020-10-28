@@ -32,9 +32,12 @@ class Chica{
 	private $est_bicis;
 	private $valor_promo;
 	private $descripcion_promo;
+	private $face;
+	private $insta;
 
 	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $whats, $direccion, $categorias,
-	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis, $valor_promo, $descripcion_promo){
+	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis, $valor_promo,
+	$descripcion_promo,	$face, $insta){
 		$this -> id = $id;
 		$this -> nombre = $nombre;
 		$this -> descripcion = $descripcion;
@@ -67,7 +70,8 @@ class Chica{
 		$this -> est_bicis = $est_bicis;
 		$this -> valor_promo = $valor_promo;
 		$this -> promocion_promo = $descripcion_promo;
-
+		$this -> face = $face;
+		$this -> insta = $insta;
 	}
 
 	public function obtenerId(){
@@ -198,6 +202,13 @@ class Chica{
 		return $this -> descripcion_promo;
 	}
 
+	public function obtenerFace(){
+		return $this -> face;
+	}
+
+	public function obtenerInsta(){
+		return $this -> insta;
+	}
 // ================================================setters========================================
 	public function cambiarNombre($nombre){
 		$this -> nombre = $nombre;
@@ -322,5 +333,13 @@ class Chica{
 
 	public function cambiarDescripcionPromo($descripcion_promo){
 		$this -> descripcion_promo = $descripcion_promo;
+	}
+
+	public function cambiarFace($face){
+		$this -> face = $face;
+	}
+
+	public function cambiarInsta($insta){
+		$this -> insta = $insta;
 	}
 }
