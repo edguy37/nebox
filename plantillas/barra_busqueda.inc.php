@@ -18,10 +18,10 @@ Conexion :: abrir_conexion();
           <input class="txt-buscador" type="text" name="search" autocomplete="off" placeholder="¿Qué estás buscando?" autofocus/>
         </div>
         <div class="campo-ubicacion">
-          <select class="form-control select-ubic" name="ubic">
+          <select class="form-control select-ubic" name="ubic" id="ubic">
             <!-- <option value="Cancún">Cancún</option> -->
              <!-- GCP Se agrega otras ciudades ademas de Mérida  -->
-            <option value="" selected="" disabled="">Seleccione...</option>
+            <option value="" selected="" disabled="">seleccione ubicacion</option>
             <option value="Cancún">Cancún</option>
             <option value="Ciudad del Carmen Campeche">Ciudad del Carmen Campeche</option>
             <option value="Isla Mujeres">Isla Mujeres</option>
@@ -31,6 +31,9 @@ Conexion :: abrir_conexion();
             <option value="Tulum">Tulum</option>
              <!-- GCP Se agrega otras ciudades ademas de Mérida -->
           </select>
+            <script type="text/javascript">
+              document.getElementById('ubic').value = "<?php echo $_GET['ubic'];?>";
+            </script>
         </div>
       </div>
       <input type="submit" value="Buscar" class="btn btn-sm btn-default btn-buscar"/>
