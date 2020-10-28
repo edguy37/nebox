@@ -34,7 +34,7 @@ header .logo-atras a{
 	line-height: 50px;
 }
 .cover{
-	padding: 3em 0px;
+	padding: 1.3em 0em 2.5em 0em;
 	background-size: cover;
 	background-position: center;
 	position: relative;
@@ -55,7 +55,7 @@ header .logo-atras a{
 	z-index: 5;
 }
 .logo {
-    max-width: 184px;
+    max-width: 350px;
 		margin: auto;
 }
 .titulo{
@@ -64,7 +64,7 @@ header .logo-atras a{
 	margin-bottom: 3em;
 }
 .titulo p{
-	margin: 2rem 0;
+	margin: 0.6rem 0 -0.5rem 0;
 	text-shadow: 1px 1px black;
 }
 .blank{
@@ -238,9 +238,8 @@ a.resumen-link:hover{
 	position: absolute;
 	z-index: 5;
 }
-.fondo-chica{
-	/*background-image: url(http://www.sexyloveapp.com/grr.png);*/
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%),url(http://www.sexyloveapp.com/yay.png);
+.fondo-inscripcion{
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%),url(http://www.nebox.com.mx/sl/categorias/img-buscador.jpg);
 	background-size: cover;
 	background-position:center;
 	padding-left: 5%;
@@ -535,6 +534,19 @@ footer p{
 	width: 100%;
 	height:100%;
 }
+
+.sub {
+	margin-bottom: 2em;
+}
+.subir input{
+	width: 80%;
+}
+.subir-hor input{
+	width: 50%;
+}
+.last{
+	margin-bottom: 2em;
+}
 /*================================================ breakpoints ========================================*/
 @media screen and (min-width: 1800px){
 	.negocios{
@@ -560,7 +572,7 @@ footer p{
 }
 @media screen and (min-width:992px){
 	.cover{
-		padding: 7em 0px;
+		padding: 3.5em 0em 7em 0em;
 	}
 	.btn-buscar {
 			margin-left: 22px;
