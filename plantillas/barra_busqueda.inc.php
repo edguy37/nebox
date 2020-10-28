@@ -20,7 +20,16 @@ Conexion :: abrir_conexion();
         <div class="campo-ubicacion">
           <select class="form-control select-ubic" name="ubic">
             <!-- <option value="Cancún">Cancún</option> -->
+             <!-- GCP Se agrega otras ciudades ademas de Mérida  -->
+            <option value="" selected="" disabled="">Seleccione...</option>
+            <option value="Cancún">Cancún</option>
+            <option value="Ciudad del Carmen Campeche">Ciudad del Carmen Campeche</option>
+            <option value="Isla Mujeres">Isla Mujeres</option>
             <option value="Mérida Yucatán">Mérida Yucatán</option>
+            <option value="Playa del Carmen">Playa del Carmen</option>
+            <option value="Progreso Yucatán">Progreso Yucatán</option>
+            <option value="Tulum">Tulum</option>
+             <!-- GCP Se agrega otras ciudades ademas de Mérida -->
           </select>
         </div>
       </div>
