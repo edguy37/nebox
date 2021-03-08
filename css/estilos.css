@@ -153,10 +153,11 @@ header .logo-atras a{
 	text-align: center;
 	margin-bottom: -5px;
 }
-.extend{
+	/* deprecated */
+/* .extend{
 	margin-top: 0.5rem !important;
 	padding: 0 0.2rem;
-}
+} */
 .promo-box{
 	background-color: #0b9d7b;
 	width: 40%;
@@ -178,8 +179,32 @@ header .logo-atras a{
 	line-height: 18px;
 }
 .negocios{
-	width: 100%;
+	width: 95%;
+	margin: auto;
+	max-width: 1240px;
+	
+	display: grid;
+	
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-gap: 10px;
 }
+@media only screen and (min-width: 576px){
+	.negocios{
+	  grid-template-columns: 1fr 1fr;
+	}
+  }
+@media only screen and (min-width: 768px){
+	.negocios{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+.negocio{
+	border-radius: 8px;
+	padding-bottom: 45%;
+	background-size: cover;
+	background-position: center center;
+  }
 .categorias{
 		width: 100%;
 }
@@ -252,7 +277,8 @@ a.resumen-link:hover{
 	padding-left: 5%;
 	padding-right: 5%;
 }
-.centrar-imagen{
+	/* deprecated */
+/* .centrar-imagen{
 	background-size: cover;
 	background-position: center;
 }
@@ -261,14 +287,13 @@ a.resumen-link:hover{
 	position: relative;
 	padding: 4.5em 0;
 	border-radius: 5px;
-}
+} */
 .caja-link-negocio-promo{
-	display: block;
-	height: 9em;
+	display:block;
+	position: relative;
+	
 	width: 100%;
-	position: absolute;
-	margin-top: -4.5em;
-	z-index: 20;
+	height:100%;
 }
 .caja-link-negocio-promo:after{
 	content: ' ';
@@ -277,7 +302,7 @@ a.resumen-link:hover{
 	right: 0;
 	bottom: 0;
 	left: 0;
-	border-radius: 5px;
+	border-radius: 8px;
 	background: rgba(0, 0, 0, 0.15);
 }
 .caja-link-negocio-promo:hover:after{
@@ -549,9 +574,9 @@ footer p{
 }
 /*================================================ breakpoints ========================================*/
 @media screen and (min-width: 1800px){
-	.negocios{
+	/* .negocios{
 		width: 60%;
-	}
+	} */
 	.categorias{
 			width: 60%;
 	}
@@ -563,9 +588,9 @@ footer p{
 	}
 }
 @media screen and (min-width: 1600px) and (max-width: 1800px){
-	.negocios{
+	/* .negocios{
 		width: 80%;
-	}
+	} */
 	.categorias{
 			width: 80%;
 	}

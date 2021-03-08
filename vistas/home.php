@@ -17,9 +17,7 @@ include_once 'app/Chica.inc.php';
    					}
             else{
 							?>
-							<div class="row negocios">
 								<?php EscritorPromociones::escribirPromosPrincipales(); ?>
-							</div>
 							<?php
             }
    					?>

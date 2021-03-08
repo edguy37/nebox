@@ -117,12 +117,15 @@ class EscritorPromociones{
       $promos = RepositorioPromo::obtenerPromociones(Conexion::obtener_conexion());
 
       if (count($promos)) {
-        ?> <div class="titulo-negocios">
+        ?> <div class="titulo-negocios col-12">
           <h3>Nuestras nuevas promociones</h3>
-        </div> <?php
+        </div>
+        <div class="negocios">
+          <?php
           foreach ($promos as $promo) {
-              self::escribirPromo($promo);
-          }
+            self::escribirPromo($promo);
+          } ?>
+          </div> <?php
       }
       else {
         echo "No se encontraron promociones";
@@ -159,11 +162,9 @@ class EscritorPromociones{
           return;
       }
       ?>
-      <div class="col-12 col-sm-6 col-md-4 d-flex extend">
-          <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="centrar-imagen caja-promo">
-            <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio-promo"></a>
-          </div>
-      </div>
+        <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio-promo">
+          <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="negocio"></div>
+        </a>
       <?php
   }
 
