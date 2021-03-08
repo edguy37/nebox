@@ -18,7 +18,7 @@ include_once 'app/Chica.inc.php';
             else{
 							?>
 							<div class="row negocios">
-								<?php Escritorpromociones::escribirPromosPrincipales(); ?>
+								<?php EscritorPromociones::escribirPromosPrincipales(); ?>
 							</div>
 							<?php
             }
