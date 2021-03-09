@@ -118,7 +118,7 @@ class EscritorPromociones{
 
       if (count($promos)) {
         ?> <div class="titulo-negocios col-12">
-          <h3>Nuestras nuevas promociones</h3>
+          <h3>Descuentos con Membresia NeBox</h3>
         </div>
         <div class="negocios">
           <?php
