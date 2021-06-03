@@ -14,7 +14,7 @@ include_once 'app/buscador.inc.php';
 	<div class="row justify-content-center">
 		<div class="col-md-6 col-lg-8 descripcion-xl">
 			<div class="algo">
-				<div class="justificar container"> <p><?php echo $negocio -> obtenerDescripcion();?></p> </div>
+				<div class="container justificar"> <p><?php echo $negocio -> obtenerDescripcion();?></p> </div>
 			</div>
 			<div class="imagenes">
 				<div class="row justify-content-center">
@@ -31,26 +31,14 @@ include_once 'app/buscador.inc.php';
 						}
 						// echo $negocio -> obtenerImg1();
 					 ?>
-					<div class="margen-imgs col-12 col-sm-10 col-md-10">
-						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg2(); ?>" alt="">
-					</div>
-					<div class="margen-imgs col-12 col-sm-10 col-md-10">
-						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg3(); ?>" alt="">
-					</div>
-					<div class="margen-imgs col-12 col-sm-10 col-md-10">
-						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg4(); ?>" alt="">
-					</div>
-					<div class="margen-imgs col-12 col-sm-10 col-md-10">
-						<img class="ajustable-pantalla" src="<?php echo $negocio -> obtenerImg5(); ?>" alt="">
-					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-6 col-lg-4">
-			<div class="informacion container">
+			<div class="container informacion">
 				<div class="row">
 					<div class="col-12">
-						<div class="seccion-horario caja-info container">
+						<div class="container seccion-horario caja-info">
 							<div class="">
 								<h4 class="horario-titulo">
 									<i class="fa fa-clock-o" aria-hidden="true"></i> Horario
