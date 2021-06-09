@@ -67,8 +67,8 @@
           $imgid = mysqli_fetch_all($results2, MYSQLI_ASSOC);
           foreach($imgid as $id){
             $idimg = $id['imgid'];
-            $sql3 = "INSERT INTO `negocio_imagenes`(`neg_id`, `img_id`) VALUES ($nid,$idimg)";
-            // echo $nid . ' ' . $idimg;
+            $sql3 = "INSERT INTO negocio_imagenes (`neg_id`, `img_id`) VALUES ($nid,$idimg)";
+             echo $nid . ' ' . $idimg;
             $result3 = mysqli_query($conn, $sql3);
           }
           $msg = "Imagen subida exitosamente";

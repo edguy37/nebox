@@ -234,5 +234,5 @@ CREATE TABLE negocio_imagenes (
     neg_id tinyint(12) NOT NULL,
     img_id tinyint(12) NOT NULL,
     CONSTRAINT fk_negimgid FOREIGN KEY(neg_id) REFERENCES negocios(nid),
-    CONSTRAINT fk_imgid FOREIGN KEY(img_id) REFERENCES promociones(promoid)
+    CONSTRAINT fk_imgid FOREIGN KEY(img_id) REFERENCES imagenes(imgid)
     );

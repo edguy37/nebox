@@ -23,11 +23,11 @@ include_once('processForm.php');
     mysqli_query($conn, "DELETE FROM imagenes WHERE imgid = $fileid");
     unlink($filename);
     $msg = 'Archivo '.$filename.' Se eliminó correctamente';
-    $msgClass = 'alert-success';
+    $msg_class = 'alert-success';
     header("Refresh:3");
     } else {
       $msg = 'No se pudo borrar: '.$filename.', el archivo no existe';
-      $msgClass = 'alert-danger';
+      $msg_class = 'alert-danger';
     }
   }
 ?>
@@ -61,7 +61,6 @@ include_once('processForm.php');
               <?php echo $msg; ?>
             </div>
           <?php endif; ?>
-        <div class="<?php echo $msgClass; ?>" role="alert"><?php echo $msg; ?></div>
         <table class="table table-bordered">
           <thead>
             <th>Imagen</th>
