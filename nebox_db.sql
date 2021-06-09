@@ -221,6 +221,18 @@ CREATE TABLE negocio_promos (
     negocio_id tinyint(12) NOT NULL,
     promo_id tinyint(12) NOT NULL,
     CONSTRAINT fk_negpromoid FOREIGN KEY(negocio_id) REFERENCES negocios(nid),
-    CONSTRAINT fk_promoid FOREIGN KEY(promo_id) REFERENCES promociones(promo_id)
+    CONSTRAINT fk_promoid FOREIGN KEY(promo_id) REFERENCES promociones(promoid)
 );
 INSERT INTO negocio_promos(negocio_id, promo_id) VALUES (51, 0);
+
+CREATE TABLE imagenes (
+    imgid tinyint(12) NOT NULL AUTO_INCREMENT,
+    img varchar(400) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'http://www.upyapp.com/images/emptyview.png',
+    PRIMARY KEY (`imgid`)
+);
+CREATE TABLE negocio_imagenes (
+    neg_id tinyint(12) NOT NULL,
+    img_id tinyint(12) NOT NULL,
+    CONSTRAINT fk_negimgid FOREIGN KEY(neg_id) REFERENCES negocios(nid),
+    CONSTRAINT fk_imgid FOREIGN KEY(img_id) REFERENCES promociones(promoid)
+    );
