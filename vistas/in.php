@@ -11,16 +11,8 @@ include_once 'plantillas/barra_atras.inc.php'
     <input type="text" name="descripcion_negocio" value=""><br>
     Link imagen principal <br>
     <input type="text" name="logo_negocio" value=""><br>
-    Link imagen 1 <br>
+    Link imagenes <br>
     <input type="text" name="img1_negocio" value=""><br>
-    Link imagen 2 <br>
-    <input type="text" name="img2_negocio" value=""><br>
-    Link imagen 3 <br>
-    <input type="text" name="img3_negocio" value=""><br>
-    Link imagen 4 <br>
-    <input type="text" name="img4_negocio" value=""><br>
-    Link imagen 5 <br>
-    <input type="text" name="img5_negocio" value=""><br>
     Correo <br>
     <input type="text" name="correo_negocio" value=""><br>
     Telefono a 10 digitos <br>
