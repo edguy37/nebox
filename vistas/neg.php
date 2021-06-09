@@ -11,7 +11,7 @@
   $nombre = $_POST['nombre'];
   if (isset($id)) {
     mysqli_query($conn, "DELETE FROM chicas WHERE CH_ID = $id");
-    $msg = 'Negocio: '.$nombre.' Se eliminó correctamente';
+    $msg = 'Negocio: '.$nombre.' Se eliminó correctamente. <br> espere...';
     $msgClass = 'alert-success';
     header("Refresh:3");
     } else {
@@ -52,12 +52,16 @@
         <table class="table table-bordered">
           <thead>
             <th>Nombre</th>
+            <th>Imagen</th>
             <th>Opciones</th>
           </thead>
           <tbody>
             <?php foreach ($users as $user): ?>
               <tr>
                 <td> <p><?php echo $user['NOMBRE']; ?></p> </td>
+                <td>
+                    <img src="images/avatar.jpg" alt="">
+                </td>
                 <td>
                   <form method="get" action="edi.php">
                     <input type="hidden" name="nid" value="<?php echo $user['CH_ID']; ?>">

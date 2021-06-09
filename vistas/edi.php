@@ -22,7 +22,8 @@ include_once('processForm.php');
     mysqli_query($conn, "DELETE FROM negocio_imagenes WHERE img_id = $fileid;");
     mysqli_query($conn, "DELETE FROM imagenes WHERE imgid = $fileid");
     unlink($filename);
-    $msg = 'Archivo '.$filename.' Se eliminó correctamente';
+    // $msg = 'Archivo '.$filename.' Se eliminó correctamente';
+    $msg = 'La imagen se eliminó correctamente. <br> espere...';
     $msg_class = 'alert-success';
     header("Refresh:3");
     } else {
