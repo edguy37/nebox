@@ -54,6 +54,18 @@ if($partes_ruta[0] == 'nebox'){
 				$ruta_elegida = 'vistas/lpn.php';
 				break;
 
+				case 'neg.php':
+				$ruta_elegida = 'vistas/neg.php';
+				break;
+
+				case 'alt.php':
+				$ruta_elegida = 'vistas/alt.php';
+				break;
+
+				case 'edi.php':
+				$ruta_elegida = 'vistas/edi.php';
+				break;
+
 			default:
 				# code...
 				break;
