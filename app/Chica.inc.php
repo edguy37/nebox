@@ -9,11 +9,12 @@ class Chica{
 	private $img3;
 	private $img4;
 	private $img5;
-	private $fechaRegistro;
+	private $fecha_registro;
 	private $correo;
 	private $telefono;
 	private $whats;
 	private $direccion;
+	private $maps;
 	private $categorias;
 	private $ubicacion;
 	private $precio;
@@ -35,7 +36,7 @@ class Chica{
 	private $face;
 	private $insta;
 
-	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fechaRegistro, $correo, $telefono, $whats, $direccion, $categorias,
+	public function __construct($id, $nombre, $descripcion, $logo, $img1, $img2, $img3, $img4, $img5, $fecha_registro, $correo, $telefono, $whats, $direccion, $maps, $categorias,
 	$ubicacion, $precio, $activo, $promocion, $lunes, $martes, $miercoles, $jueves, $viernes, $sabado, $domingo, $tarjeta, $alcohol, $estacionamiento, $est_bicis, $valor_promo,
 	$descripcion_promo,	$face, $insta){
 		$this -> id = $id;
@@ -47,11 +48,12 @@ class Chica{
 		$this -> img3 = $img3;
 		$this -> img4 = $img4;
 		$this -> img5 = $img5;
-		$this -> fecha_registro = $fechaRegistro;
+		$this -> fecha_registro = $fecha_registro;
 		$this -> correo = $correo;
 		$this -> telefono = $telefono;
 		$this -> whats = $whats;
 		$this -> direccion = $direccion;
+		$this -> maps = $maps;
 		$this -> categorias = $categorias;
 		$this -> ubicacion = $ubicacion;
 		$this -> precio = $precio;
@@ -130,6 +132,10 @@ class Chica{
 		return $this -> direccion;
 	}
 
+	public function obtenerMaps(){
+		return $this -> maps;
+	}
+	
 	public function obtenerCategorias(){
 		return $this -> categorias;
 	}
@@ -261,6 +267,10 @@ class Chica{
 
 	public function cambiarDireccion($direccion){
 		$this -> direccion = $direccion;
+	}
+
+	public function cambiarMaps($maps){
+		$this -> maps = $maps;
 	}
 
 	public function cambiarCategorias($categorias){
