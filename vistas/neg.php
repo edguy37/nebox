@@ -60,7 +60,7 @@
               <tr>
                 <td> <p><?php echo $user['NOMBRE']; ?></p> </td>
                 <td>
-                    <img src="images/avatar.jpg" alt="">
+                    <img src="images/avatar.jpg" width="90" height="90" alt="">
                 </td>
                 <td>
                   <form method="get" action="edi.php">
