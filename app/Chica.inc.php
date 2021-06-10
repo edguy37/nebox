@@ -243,7 +243,7 @@ class Chica{
 	}
 
 	//Tener cuidado con esta
-	public function cambiarFechaRegistro($fecha_registro){
+	public function cambiarFechaRegistro($fechaRegistro){
 		$this -> fechaRegistro = $fechaRegistro;
 	}
 
