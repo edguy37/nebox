@@ -88,8 +88,68 @@
   }
   if(isset($_POST['alta_negocio'])){
     $nombre = $_POST['nombre'];
-    $sql = "INSERT INTO chicas SET NOMBRE='$nombre'";
-    if(mysqli_query($conn, $sql)){
+    $descripcion = $_POST['descripcion_negocio'];
+    $correo = $_POST['correo_negocio'];
+    $tel = $_POST['tel_negocio'];
+    $whats = $_POST['whats'];
+    $direccion = $_POST['direccion'];
+    $maps = $_POST['maps'];
+    $categoria = $_POST['categoria'];
+    $ubicacion = $_POST['ubicacion'];
+    $facebook = $_POST['facebook'];
+    $instagram = $_POST['instagram'];
+    $sql = "INSERT INTO chicas SET NOMBRE='$nombre', DESCRIPCION='$descripcion', CORREO='$correo', NUM_TEL='$tel', whats='$whats', direccion='$direccion', CATEGORIA='$categoria', UBICACION='$ubicacion', facebook='$facebook', insta='$instagram', MAPS='$maps'";
+    mysqli_query($conn, $sql);
+    $nid = mysqli_insert_id($conn);
+    if(mysqli_affected_rows($conn)){
+      if(isset($_FILES["profileImage"])){
+            // for the database
+        $imageName = time() . '-' . $_FILES["profileImage"]["name"];
+        // For image upload
+        $target_dir = "promos/";
+        $target_file = $target_dir . basename($imageName);
+        // VALIDATION
+        // validate image size. Size is calculated in Bytes
+        if($_FILES['profileImage']['size'] > 200000) {
+          $msg = "La imagen no debe pesar más de 200Kb";
+          $msg_class = "alert-danger";
+        }
+        // check if file exists
+        if(file_exists($target_file)) {
+          $msg = "La imagen ya existe";
+          $msg_class = "alert-danger";
+        }
+        // Upload image only if no errors
+        if (empty($error)) {
+          if(move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
+            sleep(1);
+            $sql2 = "INSERT INTO promociones SET img='$imageName'";
+            mysqli_query($conn, $sql2);
+            if(mysqli_affected_rows($conn)){
+              $sql3 = "SELECT promoid FROM promociones WHERE img='$imageName'";
+              $results3 = mysqli_query($conn, $sql3);
+              $imgid = mysqli_fetch_all($results3, MYSQLI_ASSOC);
+              foreach($imgid as $id){
+                $idimg = $id['promoid'];
+                $sql4 = "INSERT INTO negocio_promos (`negocio_id`, `promo_id`) VALUES ($nid,$idimg)";
+                //  echo $nid . ' ' . $idimg;
+                $result4 = mysqli_query($conn, $sql4);
+              }
+              $msg = "Imagen subida exitosamente";
+              $msg_class = "alert-success";
+            } else {
+              $msg = "Hubo un error en la base de datos";
+              $msg_class = "alert-danger";
+            }
+            // if(mysqli_query($conn, $sql2)){
+            //   echo "mira";
+            // }
+          } else {
+            $msg = "Ocurrió un error al subir la imagen";
+            $msg_class = "alert-danger";
+          }
+        }
+      }
       $msg = "Negocio subido exitosamente";
       $msg_class = "alert-success";
     } else {
