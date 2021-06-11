@@ -1,6 +1,9 @@
 <?php
   $conn = mysqli_connect("localhost", "root", "", "sexylove_db");
-  $results = mysqli_query($conn, "SELECT CH_ID, NOMBRE FROM chicas");
+  $results = mysqli_query($conn, "SELECT CH_ID, NOMBRE, IMG 
+  FROM negocio_promos
+  LEFT JOIN chicas on negocio_promos.negocio_id = chicas.CH_ID
+  LEFT JOIN promociones on negocio_promos.promo_id = promociones.promoid");
   $users = mysqli_fetch_all($results, MYSQLI_ASSOC);
 
   // ****DELETE FILE****
@@ -60,7 +63,7 @@
               <tr>
                 <td> <p><?php echo $user['NOMBRE']; ?></p> </td>
                 <td>
-                    <img src="images/avatar.jpg" width="90" height="90" alt="">
+                    <img src="<?php echo 'promos/' . $user['IMG'] ?>" width="90" height="90" alt="">
                 </td>
                 <td>
                   <form method="get" action="edi.php">
