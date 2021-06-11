@@ -53,6 +53,15 @@ include_once('processForm.php');
         <li>Subir negocio</li>
       </a>
     </ul>
+    <div>
+      <ul>
+        <a href="index.php">
+          <li>
+            <img src="logo.png" alt="">
+          </li>
+        </a>
+      </ul>
+    </div>
   </nav>
   <div class="container">
     <div class="row">

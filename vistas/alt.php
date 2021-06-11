@@ -20,6 +20,15 @@
         <li>Subir negocio</li>
       </a>
     </ul>
+    <div>
+      <ul>
+        <a href="index.php">
+          <li>
+            <img src="logo.png" alt="">
+          </li>
+        </a>
+      </ul>
+    </div>
   </nav>
   <div class="container">
     <form action="alt.php" method="post" enctype="multipart/form-data">
