@@ -188,13 +188,13 @@ INSERT INTO horarios(negocio_id, open_t, close_t, day) VALUES (51, '07:00:00', '
 
 CREATE TABLE horario (
     negocio_id tinyint(12) NOT NULL,
-    lunes VARCHAR(50),
-    martes VARCHAR(50),
-    miercoles VARCHAR(50),
-    jueves VARCHAR(50),
-    viernes VARCHAR(50),
-    sabado VARCHAR(50),
-    domingo VARCHAR(50),
+    lunes VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+    martes VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+    miercoles VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+    jueves VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+    viernes VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+    sabado VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+    domingo VARCHAR(50) COLLATE utf8_unicode_ci DEFAULT NULL,
     CONSTRAINT fk_negid FOREIGN KEY(negocio_id) REFERENCES negocios(nid)
 );
 INSERT INTO horario(negocio_id, lunes, martes, miercoles, jueves, viernes, sabado, domingo) VALUES (51, '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00', '07:00 - 16:00','07:00 - 16:00','08:00 - 13:00', 'Cerrado');
