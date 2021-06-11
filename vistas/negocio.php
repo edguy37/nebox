@@ -62,15 +62,19 @@ include_once 'app/buscador.inc.php';
 										<?php echo $negocio -> obtenerDireccion();?>
 							</div>
 							<div class="info-element">
-								<a target="_blank"href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerWhats();?>&text=Hola, vi tu promocion en Nebox">
+										<i class="fas fa-map-marker-alt"></i>
+										<a href="<?php echo $negocio -> obtenerMaps();?>" target="blank">Ver ubicación</a>
+							</div>
+							<div class="info-element">
+								<a target="blank"href="https://api.whatsapp.com/send?phone=<?php echo $negocio -> obtenerWhats();?>&text=Hola, vi tu promocion en Nebox">
 									<i class="fab fa-whatsapp"></i>
 									Envíanos un WhatsApp
 								</a>
 							</div>
 							<div class="redes">
-								<a target="_blank" href="<?php echo $negocio -> obtenerFace(); ?>">	<i class="fa fa-facebook-square" aria-hidden="true"></i>
+								<a target="blank" href="<?php echo $negocio -> obtenerFace(); ?>">	<i class="fa fa-facebook-square" aria-hidden="true"></i>
 								<?php echo substr($negocio -> obtenerFace(),24); ?> </a> <br>
-								<a target="_blank" href="<?php echo $negocio -> obtenerInsta(); ?>"> <i class="fa fa-instagram" aria-hidden="true"></i>
+								<a target="blank" href="<?php echo $negocio -> obtenerInsta(); ?>"> <i class="fa fa-instagram" aria-hidden="true"></i>
 									<?php echo substr($negocio -> obtenerInsta(),25); ?> </a> <br> </a>
 							</div>
 						</div>
