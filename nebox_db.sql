@@ -71,7 +71,7 @@ CREATE TABLE `negocios` (
   `num_tel` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `whats` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `direccion` varchar(100) COLLATE utf8_unicode_ci DEFAULT 'Sin direccion',
-  `maps` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `maps` varchar(2000) COLLATE utf8_unicode_ci DEFAULT NULL,
   `precio` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `activo` tinyint(1) NOT NULL DEFAULT '1',
   `promocion` int(40) NOT NULL DEFAULT '0',
