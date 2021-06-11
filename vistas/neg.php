@@ -5,7 +5,9 @@
   LEFT JOIN chicas on negocio_promos.negocio_id = chicas.CH_ID
   LEFT JOIN promociones on negocio_promos.promo_id = promociones.promoid");
   $users = mysqli_fetch_all($results, MYSQLI_ASSOC);
-
+  //para cargar los que no tienen imagen... o que fallaron.
+  $more_results = mysqli_query($conn, "SELECT CH_ID, NOMBRE FROM chicas");
+  $more_users = mysqli_fetch_all($more_results, MYSQLI_ASSOC);
   // ****DELETE FILE****
   $msg = "";
   $msgClass = "";
@@ -69,6 +71,25 @@
           </thead>
           <tbody>
             <?php foreach ($users as $user): ?>
+              <tr>
+                <td> <p><?php echo $user['NOMBRE']; ?></p> </td>
+                <td>
+                    <img src="<?php echo 'promos/' . $user['IMG'] ?>" width="90" height="90" alt="">
+                </td>
+                <td>
+                  <form method="get" action="edi.php">
+                    <input type="hidden" name="nid" value="<?php echo $user['CH_ID']; ?>">
+                    <input type="submit" value="Editar" />
+                  </form>
+                  <form method="post" action="neg.php">
+                    <input type="hidden" name="negocio_id" value="<?php echo $user['CH_ID']; ?>">
+                    <input type="hidden" name="nombre" value="<?php echo $user['NOMBRE']; ?>">
+                    <input type="submit" value="Borrar" />
+                  </form>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+            <?php foreach ($more_users as $user): ?>
               <tr>
                 <td> <p><?php echo $user['NOMBRE']; ?></p> </td>
                 <td>
