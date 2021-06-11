@@ -93,7 +93,7 @@
     $tel = $_POST['tel_negocio'];
     $whats = $_POST['whats'];
     $direccion = $_POST['direccion'];
-    $maps = $_POST['maps'];
+    $maps = mysqli_real_escape_string($conn, $_POST['maps']);
     $categoria = $_POST['categoria'];
     $ubicacion = $_POST['ubicacion'];
     $facebook = $_POST['facebook'];
@@ -102,6 +102,20 @@
     mysqli_query($conn, $sql);
     $nid = mysqli_insert_id($conn);
     if(mysqli_affected_rows($conn)){
+      // Horario
+      $lunes = $_POST['lunes'];
+      $martes = $_POST['martes'];
+      $miercoles = $_POST['miercoles'];
+      $jueves = $_POST['jueves'];
+      $viernes = $_POST['viernes'];
+      $sabado = $_POST['sabado'];
+      $domingo = $_POST['domingo'];
+
+      $sqlh = "INSERT INTO horario (negocio_id, lunes, martes, miercoles, jueves, viernes, sabado, domingo)
+      VALUES ('$nid', '$lunes', '$martes', '$miercoles', '$jueves', '$viernes', '$sabado', '$domingo')";
+      mysqli_query($conn, $sqlh);
+
+      // procesar imagen
       if(isset($_FILES["profileImage"])){
             // for the database
         $imageName = time() . '-' . $_FILES["profileImage"]["name"];

@@ -81,6 +81,23 @@
             <input type="file" name="profileImage" onChange="displayImage(this)" id="profileImage" class="form-control" style="display: none;">
             <label>Imagen seleccionada</label>
           </div>
+          <div>
+            <h3>Horario</h3>
+            Lunes<br>
+            <input type="text" name="lunes" value=""><br>
+            Martes<br>
+            <input type="text" name="martes" value=""><br>
+            Miercoles<br>
+            <input type="text" name="miercoles" value=""><br>
+            Jueves<br>
+            <input type="text" name="jueves" value=""><br>
+            Viernes<br>
+            <input type="text" name="viernes" value=""><br>
+            Sabado<br>
+            <input type="text" name="sabado" value=""><br>
+            Domingo<br>
+            <input type="text" name="domingo" value="" class="last"><br>
+          </div>
         </div>
       </div>
     </form>
