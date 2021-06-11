@@ -125,7 +125,7 @@ class EscritorPromociones{
           foreach ($promos as $promo) {
             self::escribirPromo($promo);
           } ?>
-          </div> <?php
+        </div> <?php
       }
       else {
         echo "No se encontraron promociones";
@@ -150,10 +150,13 @@ class EscritorPromociones{
     global $busqueda;
     global $ubic;
     $promociones = RepositorioPromo::obtenerPromocionesBusqueda(Conexion::obtener_conexion(), $busqueda, $ubic);
-    if (count($promociones)) {
+    if (count($promociones)) { ?>
+    <div class="negocios">
+      <?php
       foreach ($promociones as $promo) {
         self::escribirPromo($promo);
-      }
+      } ?>
+      </div> <?php
     }
   }
 
