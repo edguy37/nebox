@@ -52,7 +52,7 @@ class EscritorNegocios{
             return;
         }
         ?>
-        <div class="col-12 col-sm-6 col-md-4 mt-4">
+        <div class="mt-4 col-12 col-sm-6 col-md-4">
             <div style="background-image: url(<?php echo $negocio -> obtenerLogo();?>);" class="centrar-imagen caja-negocio">
               <a href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>" class="caja-link-negocio"></a>
               <a href="<?php echo RUTA_NEGOCIO . '/' . $negocio -> obtenerId();?>">
@@ -163,7 +163,7 @@ class EscritorPromociones{
       }
       ?>
         <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio-promo">
-          <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="negocio"></div>
+          <div style="background-image: url(<?php echo 'promos/' . $promo -> obtenerImg();?>);" class="negocio"></div>
         </a>
       <?php
   }
@@ -173,7 +173,7 @@ class EscritorPromociones{
           return;
       }
       ?>
-      <div class="col-12 col-sm-6 col-md-6 mt-4 d-flex extend">
+      <div class="mt-4 col-12 col-sm-6 col-md-6 d-flex extend">
           <div style="background-image: url(<?php echo $promo -> obtenerImg();?>);" class="centrar-imagen caja-promo">
             <a href="<?php echo RUTA_NEGOCIO . '/' . $promo -> obtenerNegocioId();?>" class="caja-link-negocio-promo"></a>
           </div>
