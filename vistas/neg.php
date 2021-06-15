@@ -15,6 +15,19 @@
   $id = $_POST['negocio_id'];
   $nombre = $_POST['nombre'];
   if (isset($id)) {
+    $promo_result = mysqli_query($conn, "SELECT `promo_id` FROM `negocio_promos` WHERE negocio_id = $id");
+    $promo = mysqli_fetch_all($promo_result, MYSQLI_ASSOC);
+    if (isset($promo)){
+      //Borrar imagen-promo si hay
+      foreach($promo as $img){
+        $imgid = $img['promo_id'];
+        mysqli_query($conn, "DELETE FROM `promociones` WHERE promoid = $imgid");
+        mysqli_query($conn, "DELETE FROM `negocio_promos` WHERE negocio_id = $id");
+      }
+    }
+    mysqli_query($conn, "DELETE FROM `horario` WHERE negocio_id = $id");
+    mysqli_query($conn, "DELETE FROM `negocio_imagenes` WHERE neg_id = $id");
+    mysqli_query($conn, "DELETE FROM `extras` WHERE negocio_id = $id");
     mysqli_query($conn, "DELETE FROM chicas WHERE CH_ID = $id");
     $msg = 'Negocio: '.$nombre.' Se eliminó correctamente. <br> espere...';
     $msgClass = 'alert-success';
