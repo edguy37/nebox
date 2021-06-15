@@ -43,10 +43,11 @@ class RepositorioPromo{
 
     if (isset($conexion)){
       try{
-        $sql = "SELECT promoid, valor, descripcion_promo, img, CH_ID, NOMBRE FROM promociones
-                LEFT OUTER JOIN negocio_promos ON promociones.promoid=negocio_promos.promo_id
-                LEFT OUTER JOIN chicas ON negocio_promos.negocio_id=chicas.CH_ID
-                ORDER BY rand();";
+        $sql = "SELECT CH_ID, NOMBRE, img, descripcion_promo, promoid, valor
+        FROM negocio_promos
+        LEFT JOIN chicas on negocio_promos.negocio_id = chicas.CH_ID
+        LEFT JOIN promociones on negocio_promos.promo_id = promociones.promoid
+        ORDER BY rand();";
         $sentencia = $conexion -> prepare($sql);
         $sentencia -> execute();
         $resultado = $sentencia -> fetchAll();
