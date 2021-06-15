@@ -1,6 +1,6 @@
 <?php
   $conn = mysqli_connect("localhost", "root", "", "sexylove_db");
-  $results = mysqli_query($conn, "SELECT CH_ID, NOMBRE, IMG 
+  $results = mysqli_query($conn, "SELECT CH_ID, promoid, NOMBRE, IMG 
   FROM negocio_promos
   LEFT JOIN chicas on negocio_promos.negocio_id = chicas.CH_ID
   LEFT JOIN promociones on negocio_promos.promo_id = promociones.promoid");
@@ -23,11 +23,20 @@
         mysqli_query($conn, "DELETE FROM `negocio_promos` WHERE negocio_id = $id");
       }
     }
+    //borrar extras y horarios
     mysqli_query($conn, "DELETE FROM `horario` WHERE negocio_id = $id");
-    mysqli_query($conn, "DELETE FROM `negocio_imagenes` WHERE neg_id = $id");
     mysqli_query($conn, "DELETE FROM `extras` WHERE negocio_id = $id");
+    //borrar imagenes asociadas
+    mysqli_query($conn, "DELETE FROM `negocio_imagenes` WHERE neg_id = $id");
+    $filename = 'promos/' . $_POST['delete_file'];
+    $fileid = $_POST['file_id'];
+    if (file_exists($filename)) {
+      mysqli_query($conn, "DELETE FROM imagenes WHERE imgid = $fileid");
+      unlink($filename);
+    }
+    //borrar negocio
     mysqli_query($conn, "DELETE FROM chicas WHERE CH_ID = $id");
-    $msg = 'Negocio: '.$nombre.' Se eliminó correctamente. <br> espere...';
+    $msg = 'Negocio: '.$nombre.' Se eliminó correctamente. <br> <b>espere...</b>';
     $msgClass = 'alert-success';
     header("Refresh:3");
     } else {
@@ -95,6 +104,8 @@
                   <form method="post" action="neg.php">
                     <input type="hidden" name="negocio_id" value="<?php echo $user['CH_ID']; ?>">
                     <input type="hidden" name="nombre" value="<?php echo $user['NOMBRE']; ?>">
+                    <input type="hidden" name="file_id" value="<?php echo $user['promoid']; ?>">
+                    <input type="hidden" value="<?php echo $user['IMG']; ?>" name="delete_file" />
                     <input type="submit" value="Borrar" />
                   </form>
                 </td>
