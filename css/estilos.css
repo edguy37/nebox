@@ -58,6 +58,10 @@ header .logo-atras a{
     max-width: 350px;
 		margin: auto;
 }
+.logo-promo{
+	height: 60px;
+	margin: 0.4rem;
+}
 .titulo{
 	color: white;
 	text-align: center;
@@ -69,13 +73,6 @@ header .logo-atras a{
 }
 .blank{
 	padding: 0 1.3em
-}
-.atras{
-	justify-content: start;
-}
-.logo-atras{
-	max-width: 180px;
-	margin-top: 6px;
 }
 .atras h4 {
 	color: white;
