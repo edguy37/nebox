@@ -19,15 +19,18 @@ include_once 'app/buscador.inc.php';
 			<div class="imagenes">
 				<div class="row justify-content-center">
 					<?php
-						$imgs = explode(" ", $negocio -> obtenerImg1());
-						foreach ($imgs as $img) {
-							?>
+						$imgs = $negocio -> obtenerImgs(Conexion::obtener_conexion());
+						if (is_array($imgs)){
+
+							foreach ($imgs as $img) { 
+								?>
 							<div class="margen-imgs col-12 col-sm-10 col-md-10">
-							<img class="ajustable-pantalla" src="<?php echo $img;?>" alt="">
-						</div> <?php
+								<img class="ajustable-pantalla" src="<?php echo "../images/" . $img['IMG'];?>" alt="">
+							</div> <?php
 							// foreach ($exploded as $img) {
-							// 	echo "<img src=".$img."><br>";
-							// }
+								// 	echo "<img src=".$img."><br>";
+								// }
+							}
 						}
 						// echo $negocio -> obtenerImg1();
 					 ?>

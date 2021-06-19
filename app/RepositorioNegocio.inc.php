@@ -12,11 +12,13 @@ class RepositorioNegocio{
 		if(isset($conexion)){
 			try{
 				$sql = "SELECT * FROM chicas
-								LEFT OUTER JOIN horario ON chicas.CH_ID=horario.negocio_id
-								LEFT OUTER JOIN extras ON chicas.CH_ID=extras.negocio_id
-								LEFT OUTER JOIN negocio_promos ON chicas.CH_ID=negocio_promos.negocio_id
-								LEFT OUTER JOIN promociones ON  negocio_promos.promo_id=promociones.promoid
-								WHERE CH_ID LIKE :id";
+				LEFT OUTER JOIN horario ON chicas.CH_ID=horario.negocio_id
+				LEFT OUTER JOIN extras ON chicas.CH_ID=extras.negocio_id
+				LEFT OUTER JOIN negocio_promos ON chicas.CH_ID=negocio_promos.negocio_id
+				LEFT OUTER JOIN promociones ON  negocio_promos.promo_id=promociones.promoid
+				LEFT OUTER JOIN negocio_imagenes ON  chicas.CH_ID=negocio_imagenes.neg_id
+				LEFT OUTER JOIN imagenes ON negocio_imagenes.img_id=imagenes.imgid
+				WHERE CH_ID LIKE :id";
 				$sentencia = $conexion -> prepare($sql);
 				$sentencia -> bindParam(':id', $url, PDO::PARAM_INT);
 				$sentencia -> execute();

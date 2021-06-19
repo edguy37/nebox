@@ -92,6 +92,24 @@ class Chica{
 		return $this -> logo;
 	}
 
+	public function obtenerImgs($conexion){
+		$id = $this -> id;
+		if (isset($conexion)){
+				$sql = "SELECT IMG FROM negocio_imagenes LEFT OUTER JOIN imagenes on negocio_imagenes.img_id=imagenes.imgid WHERE neg_id = :id";
+				$sentencia = $conexion -> prepare($sql);
+				$sentencia -> bindParam(':id', $id, PDO::PARAM_INT);
+				$sentencia -> execute();
+				$resultado = $sentencia -> fetchAll(PDO::FETCH_ASSOC);
+				return $resultado;
+			// 	$conn = mysqli_connect("localhost", "root", "", "sexylove_db");
+			// 	$r = mysqli_query($conn, "SELECT IMG FROM negocio_imagenes LEFT OUTER JOIN imagenes on negocio_imagenes.img_id=imagenes.imgid WHERE neg_id = $id;");
+			// 	if (!is_bool($r)){
+			// 	$i = mysqli_fetch_array($r, MYSQLI_ASSOC);
+			// 	print_r($i);
+			// 	return $i;
+			// }
+		} 
+	}
 	public function obtenerImg1(){
 		return $this -> img1;
 	}
