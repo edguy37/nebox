@@ -2,6 +2,7 @@
   $msg = "";
   $msg_class = "";
   $conn = mysqli_connect("localhost", "root", "", "sexylove_db");
+  mysqli_set_charset($conn, "utf8");
   if (isset($_POST['save_profile'])) {
     // for the database
     $imageName = time() . '-' . $_FILES["profileImage"]["name"];
